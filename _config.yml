@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
-title: Dynamic Bayesian Network Outlier Detection
-description: A complete multivariate time series (MTS) outlier detection system ranging from pre-processing to score-analysis.
+title: Dynamic Bayesian Network Outlier Detection (DBNOD)
+description: A complete multivariate time series outlier detection system ranging from pre-processing to score-analysis.
 
 #logo: [Location of the logo]
 show_downloads: "true"

@@ -63,10 +63,11 @@ In the web application, the modeling and scoring phases are performed at the sam
 
 refer monteiro github
 
-Temporal dependencies within and between discrete variables can be modeled using dynamic Bayesian networks (DBN) which extend traditional Bayesian networks to temporal processes. These are graphical statistical methods capable of encoding conditional relationships of complex MTS structures. A modeling technique known as tree-augmented DBN (tDBN) is used to provide a network possessing optimum inter/intra-slice connectivities for each transition network, verified to outperform existing literature. Both stationary and nonstationary DBNs are studied. The model provides a normality standard for anomaly detection.
+Define transition/window antes
 
-An attribute node at a certain time-slice can only possess at most one parent at that same slice. Furthermore, in each node, the maximum number of parents from preceding time slices is bounded by a parameter $p$.
+Temporal dependencies within and between discrete variables can be modeled using dynamic Bayesian networks (DBN) which extend traditional Bayesian networks to temporal processes. These are graphical statistical methods capable of encoding conditional relationships of complex MTS structures. A modeling technique known as tree-augmented DBN (tDBN) is used to provide a network possessing optimum inter/intra-slice connectivities for each transition network, verified to outperform existing literature. An attribute node at a certain time-slice can only possess at most one parent at that same slice. Furthermore, in each node, the maximum number of parents from preceding time slices is bounded by a parameter p. Both stationary and nonstationary DBNs are studied. The model provides a normality standard for anomaly detection.
 
+The user can specify the value of both parameters L and p, representing respectively the order (lag) and the number of preceding parents of each node wllowed. The user can furthermore choose between a stationary or non-stationary model. A stationary DBN uses a common transition network for every transition of the dataset, being thus ideal for series with statistical properties invariant of time. On the other hand, non-stationary DBNs acquire a transition network for every transition, adapting to statistical properties which change through time.
 
 #### Scoring
 

@@ -44,11 +44,11 @@ A representation known as Symbolic Aggregate approXimation (SAX) is enforced on 
 
 3. Symbolic Discretization: Normalized TS typically have Gaussian distributions. Hence, their domain can be divided into a set of equiprobable regions according to a Gaussian distribution N(0,1). Each region depicts a symbol from the alphabet size chosen. Regions are identified by boundaries, known as breakpoints. The goal is to resolve in which of the regions each TS point resides. A value falling in a certain region is transformed into the symbol associated to that region.
 
-Note that PAA can be overlooked, being normalized TS directly discretized.
+Note that PAA can be overlooked, being normalized TS directly discretized without performing dimensionality reduction.
 
 #### EXAMPLE
 
-EXAMPLE IMAGE?
+![SAX_example](assets/images/SAX_example.png)
 
 
 ### Modeling and Scoring

@@ -101,8 +101,37 @@ Two score-analysis strategies are studied to elect an optimum threshold for outl
 
 #### Tukey's strategy
 
+One can define abnormal scores as values that are too far away from the norm, presuming the existence of a cluster comprising normality. The current technique has inspiration in John Tukey's method \citep{tukey1977exploratory, hoaglin2003john}, which determines the score's interquartile range (IQR) as
+        \begin{equation}
+    	  IQR = \displaystyle  Q3 - Q1,
+        \label{eq:IQR}
+        \end{equation}
+where $Q1$ and $Q3$ are the first and third quartiles respectively. The IQR measures statistical dispersion, depicting that 50\% of the scores are within $\pm 0.5\cdot IQR$ of the median. By ignoring the scores' mean and standard deviation, the impact of extreme scores does not influence the procedure. The IQR is hence a measure of variability robust to the presence of outliers.
+
+Tukey uses the notion of \textit{fences} \cite{hoaglin2003john}, frontiers which separate outliers from normal data. The proposed approach typically generates negatively skew score distributions. Hence, a lower fence computed as $Q1 – (1.5\cdot IQR)$ is used.
+
+Transition and subject scores are classified as abnormal if their value subsists below their respective lower fence, since these are low likelihood entities. Thus, scores $s_i$ holding inequality
+        \begin{equation}
+    	  s_i \leq \displaystyle Q1 - (1.5\cdot IQR)
+        \label{eq:IQR_threshold}
+        \end{equation}
+are considered abnormal, being $Q1 - (1.5\cdot IQR)$ the threshold.
+
+Tukey's procedure prefers symmetric score distributions with a low ratio of outliers having a breakdown at about 25\% \cite{rousseeuw1993alternatives}. In scenarios with absence of anomalies, this mechanism is capable of completely eliminating false positive occurrences, since fences are not forced to be in the data's observed domain.
 
 #### Gaussian mixture model strategy
+
+To handle disjoint score distributions, a method based on a Gaussian Mixture Model (GMM) \cite{mclachlan2018finite} is employed. Commonly used in classification and clustering problems, GMMs are probabilistic models that assume data is generated from a finite mixture of Gaussian distributions with unknown parameters. Most real-world phenomena has Gaussian like distributions.
+
+A score distribution is modeled as a mixture of two Gaussian curves. Labeling each score becomes a classification problem among two classes $C_1$ and $C_2$, representing normality and abnormality respectively. Such is interpreted as uncovering the value of $P({C_1,C_2}|y)$ for each score value $y$, which can be obtained by employing Bayes Rule
+
+where $P(y|Ci)$ is the likelihood of score $y$ belonging to class $C_i$, $P(C_i)$ the priors for each class and $P(y)$ the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty.
+
+leads to the conclusion that for a score $y$ be classified as anomalous, $P(y|C_1)P(C_1)>P(y|C_2)P(C_2)$. Such is known as the Bayes Classification Rule (BCR) that provides the desired boundary.
+
+To discover the parameters of each Gaussian distribution, the current system adapts an available R package mclust \citep{fraley2017package}.
+
+The GMM strategy can handle discontinued score distributions, however, it assumes the existence of an outlier cluster. Thus, Tukey's and GMM strategies expect distinct scenarios.
 
 
 

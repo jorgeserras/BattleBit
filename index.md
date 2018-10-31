@@ -75,7 +75,7 @@ In the present system, an outlier is defined as being a single or set of observa
 
 A window is defined as a sample of a discrete MTS with $n$ variables at a specified time interval, having a size equal to $n \cdot (L+1)$. The DBN's order is represented by $L$. A window is described as
 
-WINDOW EQUATION IMAGE
+![Window_equation](assets/images/window_equation.png)
 
 where $L \leq t \leq T$ identifies the last time frame present in the window. Attributes of a certain time slice $t$ are conditioned by nodes no later than $L$ prior time frames, being such dependent on the DBN structure. All the information mentioned is akin when considering both stationary and non-stationary DBNs.
 

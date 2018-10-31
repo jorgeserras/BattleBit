@@ -6,6 +6,9 @@ dizer que a seguir está um pequeno resumo das varias phases, mas nao muito deta
 
 scroll down enphase
 
+
+**Bold** and _Italic_ and `Code` text
+
 link para a aplicação
 
 IF YOU USE THIS IN YOUR RESEARCH PLEASE CITE:
@@ -117,31 +120,11 @@ To handle disjoint score distributions, a method based on a Gaussian Mixture Mod
 </p>
 where P(y|Ci) is the likelihood of score y belonging to class Ci, P(Ci) the priors for each class and P(y) the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty. A score y is classified as anomalous if P(y|C1)P(C1)>P(y|C2)P(C2). Such is known as the Bayes Classification Rule (BCR), which provides the desired boundary. To discover the parameters of each Gaussian distribution, the current system adapts an available R package mclust REF THIS. The GMM strategy can handle discontinued score distributions, however, it assumes the existence of an outlier cluster. Thus, Tukey's and GMM strategies expect distinct scenarios.
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## References
 
 
-### Support and Contact
+
+
+## Support and Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.

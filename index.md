@@ -57,6 +57,8 @@ The pre-processing procedure must be applied to every variable preferably with t
 
 ### Modeling and Scoring
 
+In the web application, the modeling and scoring phases are performed at the same time, being the user responsible for selecting the parameters of the model. The latter can be changed afterwards to test other models.
+
 #### Modeling
 
 refer monteiro github

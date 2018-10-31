@@ -114,15 +114,7 @@ To handle disjoint score distributions, a method based on a Gaussian Mixture Mod
 <p align="center">
         <img src="assets/images/Bayes_rule.png">
 </p>
-where P(y|Ci) is the likelihood of score $y$ belonging to class $C_i$, $P(C_i)$ the priors for each class and $P(y)$ the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty.
-
-leads to the conclusion that for a score $y$ be classified as anomalous, $P(y|C_1)P(C_1)>P(y|C_2)P(C_2)$. Such is known as the Bayes Classification Rule (BCR) that provides the desired boundary.
-
-To discover the parameters of each Gaussian distribution, the current system adapts an available R package mclust \citep{fraley2017package}.
-
-The GMM strategy can handle discontinued score distributions, however, it assumes the existence of an outlier cluster. Thus, Tukey's and GMM strategies expect distinct scenarios.
-
-
+where P(y|Ci) is the likelihood of score y belonging to class Ci, P(C_i) the priors for each class and P(y) the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty. A score y is classified as anomalous if P(y|C1)P(C1)>P(y|C2)P(C2). Such is known as the Bayes Classification Rule (BCR), which provides the desired boundary. To discover the parameters of each Gaussian distribution, the current system adapts an available R package mclust REF THIS. The GMM strategy can handle discontinued score distributions, however, it assumes the existence of an outlier cluster. Thus, Tukey's and GMM strategies expect distinct scenarios.
 
 ### Markdown
 

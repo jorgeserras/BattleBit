@@ -111,7 +111,7 @@ are considered abnormal, being Q1 - (1.5IQR) the threshold. Tukey's procedure pr
 
 #### Gaussian mixture model strategy
 
-To handle disjoint score distributions, a method based on a Gaussian Mixture Model (GMM) is employed. Commonly used in classification and clustering problems, GMMs are probabilistic models that assume data is generated from a finite mixture of Gaussian distributions with unknown parameters. Most real-world phenomena has Gaussian like distributions. In the present system, score distributions are modeled as a mixture of two Gaussian curves. Labeling each score becomes a classification problem among two classes C1 and C2, representing normality and abnormality respectively. Such is interpreted as uncovering the value of P({C1,C2}|y) for each score value y, which can be obtained by employing Bayes Rule
+To handle disjoint score distributions, a method based on a Gaussian Mixture Model (GMM) is employed. Commonly used in classification and clustering problems, GMMs are probabilistic models that assume data is generated from a finite mixture of Gaussian distributions with unknown parameters. Most real-world phenomena has Gaussian like distributions. In the present system, score distributions are modeled as a mixture of two Gaussian curves. Labeling each score becomes a classification problem among two classes C1 and C2, representing normality and abnormality respectively. Such is interpreted as uncovering the value of P(C1,C2|y) for each score value y, which can be obtained by employing Bayes Rule
 <p align="center">
         <img src="assets/images/Bayes_rule.png">
 </p>

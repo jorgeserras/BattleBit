@@ -2,6 +2,10 @@ theme: jekyll-theme-minimal
 title: Dynamic Bayesian Network Outlier Detection (DBNOD)
 description: A complete multivariate time series outlier detection system ranging from pre-processing to score-analysis.
 
+Current release
+
+link for app
+
 logo: logo.png
 show_downloads: "true"
 google_analytics: UA-127454922-1

@@ -97,7 +97,7 @@ The next step is to apply score analysis to discern the final decision boundary 
 
 ### Score-Analysis
 
-
+Two score-analysis strategies are studied to elect an optimum threshold for outlier disclosure amidst scores. These strategies analyze the scores of each transition and subject and determine a boundary to discern the two classes, normality and abnormality.
 
 #### Tukey's strategy
 

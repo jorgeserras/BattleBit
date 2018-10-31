@@ -20,9 +20,6 @@ Datasets containing MTS are pre-processed prior to modeling if necessary. The pr
 - Bulleted
 - List
 
-1. Numbered
-2. List
-
 mention tutorial video
 
 INSTRUCTIONS FOR USING OFFLINE
@@ -101,23 +98,16 @@ Two score-analysis strategies are studied to elect an optimum threshold for outl
 
 #### Tukey's strategy
 
-One can define abnormal scores as values that are too far away from the norm, presuming the existence of a cluster comprising normality. The current technique has inspiration in John Tukey's method \citep{tukey1977exploratory, hoaglin2003john}, which determines the score's interquartile range (IQR) as
-        \begin{equation}
-    	  IQR = \displaystyle  Q3 - Q1,
-        \label{eq:IQR}
-        \end{equation}
-where $Q1$ and $Q3$ are the first and third quartiles respectively. The IQR measures statistical dispersion, depicting that 50\% of the scores are within $\pm 0.5\cdot IQR$ of the median. By ignoring the scores' mean and standard deviation, the impact of extreme scores does not influence the procedure. The IQR is hence a measure of variability robust to the presence of outliers.
+One can define abnormal scores as values that are too far away from the norm, presuming the existence of a cluster comprising normality. The current technique has inspiration in John Tukey's method, which determines the score's interquartile range (IQR) as IQR = Q3 - Q1, where Q1 and Q3 are the first and third quartiles respectively. The IQR measures statistical dispersion, depicting that 50% of the scores are within more or less 0.5IQR from the median. By ignoring the scores' mean and standard deviation, the impact of extreme scores does not influence the procedure. The IQR is hence a measure of variability robust to the presence of outliers.
 
-Tukey uses the notion of \textit{fences} \cite{hoaglin2003john}, frontiers which separate outliers from normal data. The proposed approach typically generates negatively skew score distributions. Hence, a lower fence computed as $Q1 – (1.5\cdot IQR)$ is used.
+Tukey uses the notion of fences, frontiers which separate outliers from normal data. The proposed approach typically generates negatively skew score distributions. Hence, a lower fence computed as Q1 – (1.5IQR) is used. Transition and subject scores are classified as abnormal if their value subsists below their respective lower fence, since these are low likelihood entities. Thus, scores holding inequality
 
-Transition and subject scores are classified as abnormal if their value subsists below their respective lower fence, since these are low likelihood entities. Thus, scores $s_i$ holding inequality
         \begin{equation}
     	  s_i \leq \displaystyle Q1 - (1.5\cdot IQR)
         \label{eq:IQR_threshold}
         \end{equation}
-are considered abnormal, being $Q1 - (1.5\cdot IQR)$ the threshold.
-
-Tukey's procedure prefers symmetric score distributions with a low ratio of outliers having a breakdown at about 25\% \cite{rousseeuw1993alternatives}. In scenarios with absence of anomalies, this mechanism is capable of completely eliminating false positive occurrences, since fences are not forced to be in the data's observed domain.
+        
+are considered abnormal, being Q1 - (1.5IQR) the threshold. Tukey's procedure prefers symmetric score distributions with a low ratio of outliers having a breakdown at about 25%. In scenarios with absence of anomalies, this mechanism is capable of completely eliminating false positive occurrences, since fences are not forced to be in the data's observed domain.
 
 #### Gaussian mixture model strategy
 

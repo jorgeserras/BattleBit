@@ -23,9 +23,12 @@ Datasets containing MTS are pre-processed prior to modeling if necessary. The pr
 1. Numbered
 2. List
 
+mention tutorial video
+
 INSTRUCTIONS FOR USING OFFLINE
 
 
+### Input file format
 
 
 

@@ -52,9 +52,7 @@ Consider a TS comprised by 8 points. After normalizing the series, a PAA transfo
 
 ![SAX_example](assets/images/SAX_example.png)
 
-generalize to MTS
-
-The pre-processing procedure must be applied to every variable preferably with the same choice of parameters when handling MTS. The selection of such values can have a considerable impact on the course to come. While the PAA parameter determines the level of proximity and memory spent for describing a TS, the alphabet size represents the granularity of expressing each element. With this in mind, it can be shown that for most applications an alphabet size in the range of 5 to 8 normally outputs good results
+The pre-processing procedure must be applied to every variable preferably with the same choice of parameters when handling MTS, meaning that a MTS subject with n variables requires n SAX discretizations. The selection of such values can have a considerable impact on the course to come. While the PAA parameter determines the level of proximity and memory spent for describing a TS, the alphabet size represents the granularity of expressing each element. With this in mind, it can be shown that for most applications an alphabet size in the range of 5 to 8 normally outputs good results.
 
 
 ### Modeling and Scoring

@@ -110,6 +110,7 @@ are considered abnormal, being Q1 - (1.5IQR) the threshold. Tukey's procedure pr
 
 To handle disjoint score distributions, a method based on a Gaussian Mixture Model (GMM) is employed. Commonly used in classification and clustering problems, GMMs are probabilistic models that assume data is generated from a finite mixture of Gaussian distributions with unknown parameters. Most real-world phenomena has Gaussian like distributions. In the present system, score distributions are modeled as a mixture of two Gaussian curves. Labeling each score becomes a classification problem among two classes C1 and C2, representing normality and abnormality respectively. Such is interpreted as uncovering the value of P({C1,C2}|y) for each score value y, which can be obtained by employing Bayes Rule
 
+![Bayes_rule](assets/images/Bayes_rule.png)
 
 where P(y|Ci) is the likelihood of score $y$ belonging to class $C_i$, $P(C_i)$ the priors for each class and $P(y)$ the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty.
 

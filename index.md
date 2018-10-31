@@ -36,13 +36,13 @@ MENTION example downloads and formatting tab
 
 Real-world datasets have a tendency to be continuous and of high dimension. Un-discretized variables foment an heavy and over-fitted model which ends up behaving poorly. The same can be said to over-sampled data. Being the trained model a DBN, pre-processing is required.
 
-A representation known as Symbolic Aggregate approXimation (SAX) is enforced on each input TS prior to the modeling phase if necessary. The procedure is applied to each univariate TS separately. Each series is then combined to form a discrete MTS dataset, each with an alphabet size chosen in the application. The SAX procedure is seen as 3 steps:
+A representation known as Symbolic Aggregate approXimation (SAX) is enforced on each input time series (TS) prior to the modeling phase if necessary. The procedure is applied to each univariate TS separately. Each series is then combined to form a discrete MTS dataset, each with an alphabet size chosen in the application. The SAX procedure is seen as 3 steps:
 
-1. Normalization:
+1. Normalization: Every TS is normalized to present zero mean and a standard deviation of one, such is achieved by employing Z-normalization. The mean of a TS is subtracted from every data point. The result is then divided by the TS' standard deviation.
 
-2. Dimensionality Reduction:
+2. Dimensionality Reduction: Each TS of length T can be compressed into equivalent sequences of size m < T. Such can be assured by Piecewise Aggregate Approximation (PAA). The latter subdivides a normalized TS into m equally sized windows. The mean of each window of size T/m is computed replacing all its values. The m means of each window serve as the new TS.
 
-3. Symbolic Discretization:
+3. Symbolic Discretization: Normalized TS typically have Gaussian distributions. Hence, their domain can be divided into a set of equiprobable regions according to a Gaussian distribution N(0,1). Each region depicts a symbol from the alphabet size chosen. Regions are identified by boundaries, known as breakpoints. The goal is to resolve in which of the regions each TS point resides. A value falling in a certain region is transformed into the symbol associated to that region.
 
 Note that PAA can be overlooked, being normalized TS directly discretized.
 

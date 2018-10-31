@@ -108,11 +108,10 @@ are considered abnormal, being Q1 - (1.5IQR) the threshold. Tukey's procedure pr
 
 #### Gaussian mixture model strategy
 
-To handle disjoint score distributions, a method based on a Gaussian Mixture Model (GMM) \cite{mclachlan2018finite} is employed. Commonly used in classification and clustering problems, GMMs are probabilistic models that assume data is generated from a finite mixture of Gaussian distributions with unknown parameters. Most real-world phenomena has Gaussian like distributions.
+To handle disjoint score distributions, a method based on a Gaussian Mixture Model (GMM) is employed. Commonly used in classification and clustering problems, GMMs are probabilistic models that assume data is generated from a finite mixture of Gaussian distributions with unknown parameters. Most real-world phenomena has Gaussian like distributions. In the present system, score distributions are modeled as a mixture of two Gaussian curves. Labeling each score becomes a classification problem among two classes C1 and C2, representing normality and abnormality respectively. Such is interpreted as uncovering the value of P({C1,C2}|y) for each score value y, which can be obtained by employing Bayes Rule
 
-A score distribution is modeled as a mixture of two Gaussian curves. Labeling each score becomes a classification problem among two classes $C_1$ and $C_2$, representing normality and abnormality respectively. Such is interpreted as uncovering the value of $P({C_1,C_2}|y)$ for each score value $y$, which can be obtained by employing Bayes Rule
 
-where $P(y|Ci)$ is the likelihood of score $y$ belonging to class $C_i$, $P(C_i)$ the priors for each class and $P(y)$ the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty.
+where P(y|Ci) is the likelihood of score $y$ belonging to class $C_i$, $P(C_i)$ the priors for each class and $P(y)$ the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty.
 
 leads to the conclusion that for a score $y$ be classified as anomalous, $P(y|C_1)P(C_1)>P(y|C_2)P(C_2)$. Such is known as the Bayes Classification Rule (BCR) that provides the desired boundary.
 

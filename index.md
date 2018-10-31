@@ -30,10 +30,23 @@ INSTRUCTIONS FOR USING OFFLINE
 
 ### Input file format
 
-
+MENTION example downloads and formatting tab
 
 ### Pre-Processing
 
+Real-world datasets have a tendency to be continuous and of high dimension. Un-discretized variables foment an heavy and over-fitted model which ends up behaving poorly. The same can be said to over-sampled data. Being the trained model a DBN, pre-processing is required.
+
+A representation known as Symbolic Aggregate approXimation (SAX) is enforced on each input TS prior to the modeling phase if necessary. The procedure is applied to each univariate TS separately. Each series is then combined to form a discrete MTS dataset, each with an alphabet size chosen in the application. The SAX procedure is seen as 3 steps:
+
+1. Normalization:
+
+2. Dimensionality Reduction:
+
+3. Symbolic Discretization:
+
+
+
+EXAMPLE IMAGE?
 
 
 ### Modeling and Scoring

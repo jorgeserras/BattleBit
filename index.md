@@ -33,6 +33,8 @@ INSTRUCTIONS FOR USING OFFLINE
 
 MENTION example downloads and formatting tab
 
+## Main Phases
+
 ### Pre-Processing
 
 Real-world datasets have a tendency to be continuous and of high dimension. Un-discretized variables foment an heavy and over-fitted model which ends up behaving poorly. The same can be said to over-sampled data. Being the trained model a DBN, pre-processing is required.

@@ -57,6 +57,17 @@ The pre-processing procedure must be applied to every variable preferably with t
 
 ### Modeling and Scoring
 
+#### Modeling
+
+refer monteiro github
+
+Temporal dependencies within and between discrete variables can be modeled using dynamic Bayesian networks (DBN) which extend traditional Bayesian networks to temporal processes. These are graphical statistical methods capable of encoding conditional relationships of complex MTS structures. A modeling technique known as tree-augmented DBN (tDBN) is used to provide a network possessing optimum inter/intra-slice connectivities for each transition network, verified to outperform existing literature. Both stationary and nonstationary DBNs are studied. The model provides a normality standard for anomaly detection.
+
+An attribute node at a certain time-slice can only possess at most one parent at that same slice. Furthermore, in each node, the maximum number of parents from preceding time slices is bounded by a parameter $p$.
+
+
+
+#### Scoring
 
 ### Score-Analysis
 

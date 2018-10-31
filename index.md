@@ -99,6 +99,13 @@ The next step is to apply score analysis to discern the final decision boundary 
 
 
 
+#### Tukey's strategy
+
+
+#### Gaussian mixture model strategy
+
+
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for

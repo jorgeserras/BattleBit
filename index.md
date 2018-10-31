@@ -46,11 +46,12 @@ A representation known as Symbolic Aggregate approXimation (SAX) is enforced on 
 
 Note that PAA can be overlooked, being normalized TS directly discretized.
 
+#### EXAMPLE
+
 EXAMPLE IMAGE?
 
 
 ### Modeling and Scoring
-
 
 
 ### Score-Analysis

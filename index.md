@@ -103,7 +103,7 @@ One can define abnormal scores as values that are too far away from the norm, pr
 Tukey uses the notion of fences, frontiers which separate outliers from normal data. The proposed approach typically generates negatively skew score distributions. Hence, a lower fence computed as Q1 – (1.5IQR) is used. Transition and subject scores are classified as abnormal if their value subsists below their respective lower fence, since these are low likelihood entities. Thus, scores holding inequality
 
 <p align="center">
-![Tukey_inequality](assets/images/tukey_inequality.png)
+        <img src="assets/images/tukey_inequality.png">
 </p>
         
 are considered abnormal, being Q1 - (1.5IQR) the threshold. Tukey's procedure prefers symmetric score distributions with a low ratio of outliers having a breakdown at about 25%. In scenarios with absence of anomalies, this mechanism is capable of completely eliminating false positive occurrences, since fences are not forced to be in the data's observed domain.

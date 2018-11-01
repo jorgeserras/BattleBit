@@ -78,18 +78,15 @@ The model is composed by a prior network and a transition network for each trans
         <img src="assets/images/transition_score.png">
 </p>
 
-where $P(x_i[t]|p_a(x_i[t]))$ is the probability of attribute $x_i[t]$ conditioned by its parent nodes' values, represented by $p_a(x_i[t])$. The latter can be attributes from the same time frame or prior ones according to the transition network. Equation~\eqref{eq:window_loglikelihood} portrays the log-likelihood (LL) of the transition, which indicates the probability of the observations of time frame $t$ given the window's observations. It is worth noting that a transition score represents the outlierness of the transition and not the time slice. However, if the evidence possesses an unseen pattern, the probability of at-least an attribute is zero, nullifying the LL score associated to it. A technique known as probability smoothing is thus employed to prevent score disruption for unseen patterns.
+where _P(x_i[t]|p_a(x_i[t]))_ is the probability of attribute _x_i[t]_ conditioned by its parent nodes' values, represented by _pa(x_i[t])_. The latter can be attributes from the same time frame or prior ones according to the transition network. The equation portrays the log-likelihood (LL) of the transition, which indicates the probability of the observations of time frame _t_ given the window's observations. It is worth noting that a transition score represents the outlierness of the transition and not the time slice. However, if the evidence possesses an unseen pattern, the probability of at-least an attribute is zero, nullifying the LL score associated to it. A technique known as probability smoothing is employed to prevent score disruption for unseen patterns.
 
-
-To acquire the outlierness of every MTS transition, a sliding window is employed. The latter can be seen as a sub-network of a DBN over consecutive time slices. The mechanism gradually captures all equally sized windows $D^{t}_{t-L}$ of a subject to compute the LL scores $Score^{t}_{t-L}$ for each transition. Since the trained model possesses an initial network $B_0$, time frames $t \leq L$ can not be explained by windows of size $n \cdot (L+1)$. Hence, according to the model's order, only transitions from slice $L+1$ forward are captured. However, the initial frames influence the scores of the next consecutive windows which include them, having the ability of inducing anomalies.
+To acquire the outlierness of every MTS transition, a sliding window is employed. The latter can be seen as a sub-network of a DBN over consecutive time slices. The mechanism gradually captures all equally sized windows of a subject to compute the LL scores for each transition. Since the trained model possesses an initial network, time frames _t_ lower or equal to _L_ can not be explained by windows of size _n(L+1)_. Hence, according to the model's order, only transitions from slice _L+1_ forward are captured. However, the initial frames influence the scores of the next consecutive windows which include them, having the ability of inducing anomalies.
 
 <p align="center">
         <img src="assets/images/Sliding_Window.png">
 </p>
 
 Furthermore, subject scoring is made available, offering the detection of anomalous MTS. A straightforward approach is considered, being a subject outlierness equal to the mean of every transition score of that subject.
-
-
 
 The next step is to apply score analysis to discern the final decision boundary between normal and anomalous scores. Scores below a specified value are classified as outliers.
 

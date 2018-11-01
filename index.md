@@ -8,9 +8,6 @@ Intructions for the offline employment of the web application when downloaded is
 
 Datasets containing MTS are pre-processed prior to modeling if necessary. The pre-processing phase studied is performed using a discretization and dimension reduction technique kown as Symbolic  Aggregate  approX-imation (SAX). Discrete MTS datasets are then employed to the tDBN modeling algorithm, which generates a DBN according to the inserted dataset and parameters chosen. The latter are the Markov lag _L_, the number of parents _p_ from preceding frames each node can possess and a flag deciding the stationarity of the model. Afterwards, the MTS dataset together with the trained model are delivered to a scoring phase. The aforementioned capitalizes on the structure and parameters of the model to analyze each MTS transition using a sliding window algorithm. Entire series are likewise scored. Subsequently, scores are delivered to a score-analysis strategy which the main goal is to create a boundary differentiating abnormal from normal scores. Two possible strategies are discussed in the present work and later compared, being this the Tukey's method and a Gaussian mixture model (GMM). A score-analysis strategy outputs a threshold used for the final binary classification. Original data associated to scores below the threshold are classified as outliers.
 
-
-**Bold** and _Italic_ and `Code` text
-
 ## Usage
 
 - Bulleted
@@ -19,7 +16,6 @@ Datasets containing MTS are pre-processed prior to modeling if necessary. The pr
 mention tutorial video
 
 INSTRUCTIONS FOR USING OFFLINE
-
 
 ### Input-data
 

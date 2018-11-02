@@ -21,7 +21,19 @@ INSTRUCTIONS FOR USING OFFLINE
 
 MENTION example downloads and formatting tab
 
-The input file should be in comma-separated values (CSV) format.
+The input file should be in comma-separated values (CSV) and in an horizontal format.
+
+- The first row of the file is the header, being the first entry "subject_id" and the remaining ones the attributes specifying their time slice index, separated by two unserscores: "attributeName__t".
+
+- Attributes must be sorted by time: "attribute1__1", "attribute2__1", "attribute1__2", "attribute2__2" ...
+
+- The first column contains an identification for each subject (multivariate time series), it cannot contain duplicates and non-numeric values (due to graphical interface issues). The subject_id column typically corresponds to a sorted array of integers.
+
+- Every row (except the first one) represents observations of a multivariate time series from a specific subject over time. 
+
+- Missing values are not permitted, these should be replaced by an additional symbol or imputted.
+
+Example of an imput file:
 
 
 

@@ -36,9 +36,14 @@ The input file should be in comma-separated values (CSV) and in an horizontal fo
 Example of an imput file:
 
 ```
-WTF
+"subject_id","V1__1","V2__1","V3__1","V4__1","V1__2","V2__2","V3__2","V4__2"
+1, 57, 67, -3, 4, 39, 70, -3, 7
+2, 46, 27,  2, 7, 56, 30,  0, 7
+3, 45, 10,  8, 8, 45, 13,  5, 4
+4, 60, 17,  5, 3, 48, 35,  4, 8
+(...)
 
-´´´
+```
 
 
 

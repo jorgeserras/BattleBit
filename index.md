@@ -10,6 +10,8 @@ Datasets containing MTS are pre-processed prior to modeling if necessary. The pr
 
 ## Usage
 
+There are two ways of utilizing the outlier detection system, using the online **[web application](https://jorgeserras.shinyapps.io/outlierdetection/)** or downloading the application for an offline use. The first does not need any additional effort. A tutorial is available to assure an immediate use, the latter conforms to both the online and offline versions.
+
 - Bulleted
 - List
 

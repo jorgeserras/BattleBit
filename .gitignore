@@ -1,10 +1,7 @@
 
+*.pper
 OutlierDetection/.Rhistory
 OutlierDetection/.RData
-OutlierDetection/.Rproj.user/55B9668C/console06/INDEX001
-*.pper
-OutlierDetection/.Rproj.user/55B9668C/rmd-outputs
-OutlierDetection/.Rproj.user/55B9668C/saved_source_markers
 OutlierDetection/accessKeys.csv
 OutlierDetection/Banana.jar
 OutlierDetection/dbn_structure_dot
@@ -17,3 +14,4 @@ OutlierDetection/test.csv
 OutlierDetection/TEST.jar
 OutlierDetection/subject_scores_Threshold_Subjects_Output.csv
 OutlierDetection/subject_scores_output.csv
+OutlierDetection/.Rproj.user

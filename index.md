@@ -33,7 +33,7 @@ The input file should be in comma-separated values (CSV) and in an horizontal fo
 
 - Data can be continuous or discrete. In the case of continous data, a pre-processing phase is available.
 
-- Missing values are not permitted, these should be replaced by an additional symbol or imputted.
+- Missing values are not permitted, these should be replaced by an additional symbol or imputted beforehand.
 
 Example of a continuous imput file:
 

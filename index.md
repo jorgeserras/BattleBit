@@ -38,7 +38,7 @@ The input file should be in comma-separated values (CSV) and in an horizontal fo
 Example of a continuous imput file:
 
 ```
-"subject_id","V1__1","V2__1","V3__1","V4__1","V1__2","V2__2","V3__2","V4__2"
+"subject_id","X1__1","X2__1","X3__1","X4__1","X1__2","X2__2","X3__2","X4__2"
 1, 57, 67, -3, 4, 39, 70, -3, 7
 2, 46, 27,  2, 7, 56, 30,  0, 7
 3, 45, 10,  8, 8, 45, 13,  5, 4

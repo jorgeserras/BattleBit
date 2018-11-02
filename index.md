@@ -12,12 +12,11 @@ Datasets containing MTS are pre-processed prior to modeling if necessary. The pr
 
 There are two ways of utilizing the outlier detection system, using the online **[web application](https://jorgeserras.shinyapps.io/outlierdetection/)** or downloading the application for an offline use. The first does not need any additional effort. A tutorial is available to assure an immediate use, the latter conforms to both the online and offline versions.
 
-- Bulleted
-- List
+The online version can have several drawbacks, being the main ones the availability of the server and the inability of resolving ver large/complex datasets. To tackle such scenarios, users are encouraged to download and employ the system in their own setups, being thus independent of third parties. A step-by-step guide for making use of the developed approach offline is available:
 
-mention tutorial video
+- 
+- 
 
-INSTRUCTIONS FOR USING OFFLINE
 
 ### Input-data
 

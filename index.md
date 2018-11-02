@@ -19,9 +19,7 @@ INSTRUCTIONS FOR USING OFFLINE
 
 ### Input-data
 
-MENTION example downloads and formatting tab
-
-The input file should be in comma-separated values (CSV) and in an horizontal format.
+The input file should be in comma-separated values (CSV) and in an horizontal format. A formatting procedure as well as example files are available in the **[web application](https://jorgeserras.shinyapps.io/outlierdetection/)**.
 
 - The first row of the file is the header, being the first entry "subject_id" and the remaining ones the attributes specifying their time slice index, separated by two unserscores: "attributeName__t".
 

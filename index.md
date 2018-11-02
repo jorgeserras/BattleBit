@@ -29,7 +29,9 @@ The input file should be in comma-separated values (CSV) and in an horizontal fo
 
 - The first column contains an identification for each subject (multivariate time series), it cannot contain duplicates and non-numeric values (due to graphical interface issues). The subject_id column typically corresponds to a sorted array of integers.
 
-- Every row (except the first one) represents observations of a multivariate time series from a specific subject over time. 
+- Every row (except the first one) represents observations of a multivariate time series from a specific subject over time.
+
+- Data can be continuous or discrete. In the case of continous data, a pre-processing phase is available.
 
 - Missing values are not permitted, these should be replaced by an additional symbol or imputted.
 

@@ -19,6 +19,8 @@ INSTRUCTIONS FOR USING OFFLINE
 
 ### Input-data
 
+The implemented application is designed to handle MTS. A univariate TS is seen as a set of observations along a consistent time rate expressing the values of a variable along a certain number of time-stamps _T_. For the case of MTS, each row of a data-set represents a subject identified by its row index. Subjects are MTS with a common number of variables _n_ and width _T_. Each column depicts a certain variable at a certain time slice. A subject is thus a combination of univariate TS.
+
 The input file should be in comma-separated values (CSV) and in an horizontal format. A formatting procedure as well as example files are available in the **[web application](https://jorgeserras.shinyapps.io/outlierdetection/)**.
 
 - The first row of the file is the header, being the first entry "subject_id" and the remaining ones the attributes specifying their time slice index, separated by two unserscores: "attributeName__t".

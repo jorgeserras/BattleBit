@@ -21,6 +21,11 @@ INSTRUCTIONS FOR USING OFFLINE
 
 MENTION example downloads and formatting tab
 
+The input file should be in comma-separated values (CSV) format.
+
+
+
+
 ## Main Phases
 
 ### Pre-Processing

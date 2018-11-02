@@ -33,7 +33,7 @@ The input file should be in comma-separated values (CSV) and in an horizontal fo
 
 - Missing values are not permitted, these should be replaced by an additional symbol or imputted.
 
-Example of an imput file:
+Example of a continuous imput file:
 
 ```
 "subject_id","V1__1","V2__1","V3__1","V4__1","V1__2","V2__2","V3__2","V4__2"

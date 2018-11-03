@@ -28,7 +28,7 @@ The online version can have several drawbacks, being the main ones the availabil
 
 7. The script "app.R" should now be opened in RStudio. Click "Run app" to launch the application. If a **[window pops up](https://image.ibb.co/g9WMa0/prompt.png)** requesting the installation of Shiny, choose "yes", otherwise it is already installed.
 
-8. The app should now be running in a seperate window, select "Open in Browser" in the **[top left corner](https://image.ibb.co/eMjUTL/open-in-browser.png)**. The application is now displayed in the predefined browser (required to correctly interpret web development programming)
+8. The app should now be running in a seperate window, select "Open in Browser" in the **[top left corner](https://image.ibb.co/eMjUTL/open-in-browser.png)**. The application is now displayed in the predefined browser (required to correctly interpret web development programming).
 
 9. Enjoy!
 

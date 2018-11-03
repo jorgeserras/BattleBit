@@ -12,11 +12,11 @@ Datasets containing MTS are pre-processed prior to modeling if necessary. The pr
 
 There are two ways of utilizing the outlier detection system. Users can access the online **[web application](https://jorgeserras.shinyapps.io/outlierdetection/)** or download the source code for an offline use. The first does not need any additional effort. A tutorial is available to assure an immediate use, conforming to both the online and offline versions.
 
-The online version can have several drawbacks, being the main ones the availability of the server and the inability of resolving very large/complex datasets. To tackle such scenarios, users are encouraged to download and employ the system in their own setups, being thus independent of third parties. A step-by-step guide for making use of the developed approach offline is available:
+The online version can have several drawbacks, being the main ones the availability of the server and the inability of resolving very large/complex datasets. To tackle such scenarios, users are encouraged to download and employ the system in their own setups, being thus independent of third parties. A step-by-step guide for making use of the developed approach offline for the first time is available next:
 
-1. 
+1. Install the latest **[Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)** (needed for the modeling/scoring phase)
 
-2. 
+2. Download and install R by selecting through one of the available **[mirrors](https://cran.r-project.org/mirrors.html)**
 
 3. 
 

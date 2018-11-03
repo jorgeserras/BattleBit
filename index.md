@@ -14,8 +14,18 @@ There are two ways of utilizing the outlier detection system. Users can access t
 
 The online version can have several drawbacks, being the main ones the availability of the server and the inability of resolving very large/complex datasets. To tackle such scenarios, users are encouraged to download and employ the system in their own setups, being thus independent of third parties. A step-by-step guide for making use of the developed approach offline is available:
 
-- 
-- 
+1. 
+
+2. 
+
+3. 
+
+4. 
+
+5. 
+
+6. 
+
 
 
 ### Input-data

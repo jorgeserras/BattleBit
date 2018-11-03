@@ -24,8 +24,9 @@ The online version can have several drawbacks, being the main ones the availabil
 
 5. Open RStudio and open the downloaded project: (File -> Open Project -> choose OutlierDetection.Rproj).
 
-6. 
+6. Still in RStudio, open the R script "installation.R" in the same folder as the project: (File -> Open File -> choose installation.R). Run the script, this will install all necessary packages and dependencies. If an error occur in the installation of rJava, please verify the installation of the JDK in step 1.
 
+7. 
 
 
 ### Input-data

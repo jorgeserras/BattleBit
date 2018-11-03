@@ -14,7 +14,7 @@ There are two ways of utilizing the outlier detection system. Users can access t
 
 The online version can have several drawbacks, being the main ones the availability of the server and the inability of resolving very large/complex datasets. To tackle such scenarios, users are encouraged to download and employ the system in their own setups, being thus independent of third parties. A step-by-step guide for making use of the developed approach offline for the first time is available next:
 
-1. Install the latest **[Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html)** (needed for the modeling/scoring phase).
+1. Install the latest [Java JDK](https://www.oracle.com/technetwork/java/javase/downloads/index.html){:target="_blank"} (needed for the modeling/scoring phase).
 
 2. Download and install R by selecting through one of the available **[mirrors](https://cran.r-project.org/mirrors.html)**.
 

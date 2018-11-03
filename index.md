@@ -20,7 +20,7 @@ The online version can have several drawbacks, being the main ones the availabil
 
 3. Download and install the Free version of **[RStudio](https://www.rstudio.com/products/rstudio/download/#download)** (needed for Shiny application).
 
-4. 
+4. Download the project **[here](https://github.com/jorgeserras/MTS_OutlierDetection/zipball/master)** or through the **[github page](https://github.com/jorgeserras/MTS_OutlierDetection)**.
 
 5. 
 

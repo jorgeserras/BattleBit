@@ -22,12 +22,15 @@ The online version can have several drawbacks, being the main ones the availabil
 
 4. Download the project **[here](https://github.com/jorgeserras/MTS_OutlierDetection/zipball/master)** or through **[Github](https://github.com/jorgeserras/MTS_OutlierDetection)** and unzip it into a folder.
 
-5. Open RStudio and open the downloaded project: (File -> Open Project -> choose OutlierDetection.Rproj).
+5. Open RStudio and open the R script "installation.R" in the folder of the project: (File -> Open File -> choose installation.R). Run the script, this will install all necessary packages and dependencies. If an error occurs in the installation of rJava, please verify the installation of the JDK in step 1.
 
-6. Still in RStudio, open the R script "installation.R" in the same folder as the project: (File -> Open File -> choose installation.R). Run the script, this will install all necessary packages and dependencies. If an error occur in the installation of rJava, please verify the installation of the JDK in step 1.
+6. Still in RStudio, open the downloaded project in the same folder as in step 5: (File -> Open Project -> choose OutlierDetection.Rproj). 
 
-7. 
+7. The script "app.R" should now be opened in RStudio. Click "Run app" to launch the application. If a window pops up requesting the installation of Shiny, choose "yes", otherwise it is already installed.
 
+8. The app should now be running in a seperate window, select "Open in Browser" in the top left corner. The application is now displayed in the predefined browser (required to correctly interpret web development programming)
+
+9. Enjoy!
 
 ### Input-data
 

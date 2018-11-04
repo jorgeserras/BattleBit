@@ -158,7 +158,7 @@ mean_std_plot <- function(subject_normalized, timestamp, n_variables, alphabet_s
           stat_summary(fun.y = 'mean', geom = 'line', size = 1.3) +
           stat_summary(fun.data = 'mean_sdl', geom = 'ribbon', alpha = 0.2) +
           geom_hline(yintercept = alphabet_to_cuts(alphabet_size)[2:alphabet_size], color = 'magenta', linetype="dashed") +
-          ggtitle("Mean and Standard Deviation of each time-stamp for every variable") +
+          ggtitle("Mean of each time-stamp for every normalized variable") +
           theme(plot.title = element_text(hjust = 0.5, color="black", size=14, face="bold")) +
           xlab("Time-stamp") + ylab("Normalized value")
     )

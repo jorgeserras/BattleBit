@@ -440,7 +440,7 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                              sidebarPanel(position = "right",
                                style="position:fixed; ", tags$head(tags$style(
                                  type = 'text/css',
-                                 'form.well { max-height: 540px; overflow-y: auto; border-radius: 35px;}'
+                                 'form.well { max-height: 560px; overflow-y: auto; border-radius: 35px;}'
                                )),
                                
                                div(id="first_div",
@@ -521,7 +521,7 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                                      #tags$hr(),
                                      tags$head(
                                        tags$style(type="text/css", "
-                                            .inline .form-control { width: 50%; height: 22px; padding: 10px 10px; font-size: 10px;}
+                                            .inline .form-control { width: 50%; height: 30px; padding: 10px 10px; font-size: 10px;}
                                             .inline, .check_box { font-size: 14px; width:200px}
                                             .control-label { font-size: 14px;}
                                                   ")
@@ -927,7 +927,7 @@ server <- function(input, output, session) {
               
               shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade")
               output$processing_description_string = renderText({
-                paste0("Each variable time series from the input dataset is discretized using a SAX algorithm with an alphabet size of ", input$alphabet_size, " symbols. Input data undergoes normalization prior to discretization. The diagram below displays the mean of the normalized time series of every variable and their standard deviations. The resulting discretized dataset is present in the table below and can be downloaded.")
+                paste0("Each variable time series from the input dataset is discretized using a SAX algorithm with an alphabet size of ", input$alphabet_size, " symbols. Input data undergoes normalization prior to discretization. The diagram below displays the mean of the normalized time series of every variable. The resulting discretized dataset is present in the table below and can be downloaded.")
               })
               
 

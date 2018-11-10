@@ -2,7 +2,7 @@
 
 library(shiny)
 library(DiagrammeR)
-
+library(ggplot2)
 
 
 first_panel <- function(n){
@@ -355,6 +355,84 @@ fifth_panel <- function(n){
   )
   
 }
+
+
+histogram_plot <- function(Score_analysis_mode, score_array, Threshold, bins){
+  
+  #### The current mode (which strategy is selected) determines the features of the plots
+  if(Score_analysis_mode == "TT")
+  {
+    main <- "Histogram for Transition Outlier Scores using Tukey's score-analysis"
+    shinyjs::show(id = "sliders_trans")
+  }
+  if(Score_analysis_mode == "TG")
+  {
+    main <- "Histogram for Transition Outlier Scores using GMM's score-analysis"
+    shinyjs::show(id = "sliders_trans")
+  }
+  if(Score_analysis_mode == "TM")
+  {
+    main <- "Histogram for Transition Outlier Scores"
+    shinyjs::show(id = "sliders_trans")
+  }
+  
+  ##### Subjects
+  if(Score_analysis_mode == "ST")
+  {
+    main <- "Histogram for Subject Outlier Scores using Tukey's strategy"
+    shinyjs::show(id = "sliders_subje")
+  }
+  if(Score_analysis_mode == "SG")
+  {
+    main <- "Histogram for Subject Outlier Scores using GMM's strategy"
+    shinyjs::show(id = "sliders_subje")
+  }
+  if(Score_analysis_mode == "SM")
+  {
+    main <- "Histogram for Subject Outlier Scores"
+    shinyjs::show(id = "sliders_subje")
+  }
+  
+  
+  if(length(which(score_array < Threshold))==0){ # No Outliers Detected for this threshold
+    
+    no_outliers <<- TRUE ########## FLAG
+    #shinyjs::show(id = "sliders_trans")
+    return(
+      hist(score_array, 
+           main = main, 
+           xlab="Scores", 
+           border="black", 
+           col = "springgreen3",
+           las=1, 
+           breaks=bins) # breaks are the number of breakpoints which determine the bins
+    )
+    
+  }else{
+    ##### FOR THE COLORS:
+    red_array <- array("red3",dim = c(1,min(which(bins > Threshold))-2)) # -2 because of 0 and yellow
+    green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > Threshold))))
+    
+    colours <- cbind(red_array,"orange",green_array)
+    #shinyjs::show(id = "sliders_trans")
+    return(
+     plot <- hist(score_array, 
+           main = main, 
+           xlab="Scores", 
+           border="black", 
+           col = colours,
+           las=1, 
+           breaks=bins) # breaks are the number of breakpoints which determine the bins
+    )
+    
+  }
+  
+  
+}
+
+
+
+
 
 
 

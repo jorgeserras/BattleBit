@@ -559,122 +559,16 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                                      
                                      div(id="detection_div",h3("Outlier Detection", style = "display:inline; text-align:center; font-family: 'Lobster';color: #ad1d28;font-size:125%;")), #actionButton(style="display:inline-block; font-size:70%;", inputId="train_again_button", "Modeling")),
                                      
-                                     #tags$hr(),
-                                     
-                                     #h4("Transition Outliers"),
-                                     
-                                     # Input: Slider for the number of bins ----
-                                     # sliderInput(inputId = "bins_trans",
-                                     #             label = "Number of bins:",
-                                     #             min = 1,
-                                     #             max = 50,
-                                     #             value = 30),
-                                     
-                                     #sliderInput("slider_color_trans", label = "Subject Range", min = 0, 
-                                     #           max = 100, value = c(40, 60)),
                                      
                                      sliderInput(inputId ="Threshold_slider",label = "Transition threshold", min = -50, 
                                                   max = 0, value = 0, step = 0.01),
                                      
-                                     
-                                     #tags$hr(),
-                                     
-                                     #h4("Subject Outliers"),
-                                     
-                                     # Input: Slider for the number of bins ----
-                                     # sliderInput(inputId = "bins_subje",
-                                     #             label = "Number of bins:",
-                                     #             min = 1,
-                                     #             max = 50,
-                                     #             value = 30),
-                                     
-                                     # sliderInput("slider_color_subje", label = "Subject Range", min = 0, 
-                                     #             max = 100, value = c(40, 60)),
-                                     
                                      sliderInput(inputId ="Threshold_slider_sub", label = "Subject threshold", min = -50, 
                                                  max = 0, value = 0, step = 0.01)
-                                     
-                                     #div(id= "fourth_button_div",actionButton(style="display:inline-block;width:200px;text-align: center;", inputId="fourth_button", "Detect Outliers"))
-                                     
+
                                      
                                  ))
                                
-                               
-                               # # Partial example
-                               # checkboxInput("smooth", "Smooth"),
-                               # conditionalPanel(
-                               #   condition = "input.smooth == true",
-                               #   selectInput("smoothMethod", "Method",
-                               #               list("lm", "glm", "gam", "loess", "rlm"))
-                               # ),
-                               # 
-                               # 
-                               # 
-                               # 
-                               # conditionalPanel("$('li.active a').first().html()==='Panel 2'",
-                               #                  actionButton("bar","Bar")
-                               # ),
-                               # conditionalPanel(condition="input.conditionedPanels==2",
-                               #                  helpText("Content Panel 2"),
-                               #                  h3("LOL")
-                               # )
-                               
-                               
-                             #tags style expects a css file
-                             #which is what make_css creates
-                             #the first element of the list is the html class to modify
-                             #the second is the border-width
-                             #the third is the value of the width
-                             #tags$style(make_css(list('.well', 'border-width', '10px'))),
-                             
-                             # singleton(
-                             #   tags$head(tags$script("
-                             #      window.onload = function() { # Do not disable the first tab
-                             #          $('#mynavlist a:contains(\"SECOND\")').parent().addClass('disabled');
-                             # 
-                             #      };
-                             # 
-                             #      Shiny.addCustomMessageHandler('activeNavs', function(nav_label) {
-                             #          $('#mynavlist a:contains(\"' + nav_label + '\")').parent().removeClass('disabled');
-                             #      });
-                             #   "))
-                             # ),
-                             
-                             # navlistPanel( selected = "FIRST", id='mynavlist',
-                             #   well = FALSE,
-                             #   fluid = FALSE, # FIXED
-                             #   widths = c(12, 12), "Menu",
-                             #   tabPanel("FIRST",
-                             #            actionButton('first_done', 'Done')
-                             #   ),
-                             #   tabPanel("Second Tab",
-                             #            actionButton('second_done', 'Done'),
-                             #            h3("TELOGO")
-                             #            
-                             #   )
-                             # )
-                                
-                             
-                             # 
-                             # navlistPanel( selected = "FIRST", id='mynavlist',
-                             #               well = FALSE,
-                             #               fluid = FALSE, # FIXED
-                             #               widths = c(12, 12), "Menu",
-                             #               tabPanel("FIRST",
-                             #                        actionButton(inputId="first_button", "Continue")
-                             #               ),
-                             #               tabPanel("Second Tab",
-                             #                        actionButton(inputId="second_button", "Continue")
-                             #                        
-                             #               )
-                             #               
-                             # )
-                             # 
-                             
-                             
-                             
-                             
-                             
                                           
                              ),
                              
@@ -684,81 +578,6 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                                uiOutput('mytabs')
                                
                                
-                               # tabsetPanel(
-                               #   id = "conditionedPanels",
-                               #   tabPanel("Panel 1", h3("LOL1")), 
-                               #   tabPanel("Panel 2", h3("LOL2"))
-                               # ),
-                               
-                               
-                               # column(12, align="center",
-                               #        img(src = "Word_Art.png", height = 250, width = 200)
-                               # ),
-                               # # Input: Select a file ----
-                               # fileInput("file1", "Choose CSV File",
-                               #           multiple = FALSE,
-                               #           accept = c("text/csv",
-                               #                      "text/comma-separated-values,text/plain",
-                               #                      ".csv")),
-                               # 
-                               # # Horizontal line ----
-                               # tags$hr(),
-                               # 
-                               # # Input: Checkbox if file has header ----
-                               # checkboxInput("header", "Header", TRUE),
-                               # 
-                               # # Input: Select separator ----
-                               # radioButtons("sep", "Separator",
-                               #              choices = c(Comma = ",",
-                               #                          Semicolon = ";",
-                               #                          Tab = "\t"),
-                               #              selected = ","),
-                               # 
-                               # # Input: Select quotes ----
-                               # radioButtons("quote", "Quote",
-                               #              choices = c(None = "",
-                               #                          "Double Quote" = '"',
-                               #                          "Single Quote" = "'"),
-                               #              selected = '"'),
-                               # 
-                               # # Horizontal line ----
-                               # tags$hr(),
-                               # 
-                               # # Input: Select number of rows to display ----
-                               # radioButtons("disp", "Display",
-                               #              choices = c(Head = "head",
-                               #                          All = "all"),
-                               #              selected = "head"),
-                               # 
-                               # 
-                               # p("Check out the online version",
-                               #   a("here", 
-                               #     href = "https://jorgeserras.shinyapps.io/outlierdetection/")),
-                               # 
-                               # 
-                               # # Input: Slider for the number of bins ----
-                               # sliderInput(inputId = "bins",
-                               #             label = "Number of bins:",
-                               #             min = 1,
-                               #             max = 50,
-                               #             value = 30),
-                               # # Input: Slider for the number of bins ----
-                               # sliderInput("slider_color", label = h3("Subject Range"), min = 0, 
-                               #             max = 100, value = c(40, 60)),
-                               # 
-                               # p("Higher the number of bins, higher the resolution of the histogram."),
-                               # p("This does not affect the outcome of the outlier detection."),
-                               # 
-                               # # Output: Data file ----
-                               # tableOutput("contents"),
-                               # 
-                               # # Output: Histogram ----
-                               # plotOutput(outputId = "distPlot"),
-                               # 
-                               # plotOutput(outputId = "matplot"),
-                               # 
-                               # textOutput("java_test")
-                               
                              )
                            )
                   ),
@@ -767,12 +586,6 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                   
                   )
   
-            
-                    
-  #htmlTemplate("www/index.html"),
-  #includeHTML("www/index.html"),
-   
-      
 )
 
 
@@ -782,9 +595,6 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
 # Define server logic required to draw a histogram ----
 server <- function(input, output, session) {
   
-    ############## BUTTONS OF NAVLIST (IN OUTLIER DETECTION
-    # observe(input$first_button,{
-    #     
   
     myTabs <<- list()
     
@@ -910,8 +720,6 @@ server <- function(input, output, session) {
           }
           
         
-        
-        
           if (input$discretize_button == 0){
             #print("discretize_button = 0")
             output$processing_description_string = renderText({
@@ -929,12 +737,7 @@ server <- function(input, output, session) {
                 paste0("Each variable time series from the input dataset is discretized using a SAX algorithm with an alphabet size of ", input$alphabet_size, " symbols. Input data undergoes normalization prior to discretization. The diagram below displays the mean of the normalized time series of every variable. The resulting discretized dataset is present in the table below and can be downloaded.")
               })
               
-
               updateTabsetPanel(session, inputId="tabsetpanel_id", selected = 'processing_tab')
-
-              ########## SHOULD HAVE ANOTHER BUTTON TO REPEAT DISCRETIZATION PROCEDURE WITHOUT PRESSING CONTINUE
-              
-              ########## SHOULD CHECK FOR ERRORS, TRY CATCH
               
               list[discrete_data_set,subject_normalized, timestamp, n_variables ] <- discretize(data_input_OD, input$alphabet_size, 0) # , paa_size
               
@@ -968,7 +771,6 @@ server <- function(input, output, session) {
               myTabs<<-c(tabs1,lapply(2, second_panel))
               shinyjs::hide(id = "discretize_button")
               shinyjs::enable(id = "second_button_div")
-              
               
               shinyjs::hide(id = "loading-content", anim = TRUE, animType = "fade") 
             }
@@ -1004,38 +806,14 @@ server <- function(input, output, session) {
             
             
             jDialog <- J('com/github/tDBN/cli/Model_training_outlier_detection')
-            #.jconstructors(jDialog)
-            
-            #j_filepath <- new(J("java.lang.String"), "ECG_TRAINTEST_APPROPRIATE_DISCRETE.csv")
+
             j_filepath <- new(J("java.lang.String"), filepath)
             
             j_score <- new(J("java.lang.String"), "ll")
-            
-            # aux <- J("java.lang.Integer")
-            # j_lag <- new(aux, as.integer(1))
-            # aux <- J("java.lang.Integer")
-            # j_previous <- new(aux, as.integer(1))
-            
-            # aux <- J("java.lang.String")
-            # j_boolean <- new(aux, "TRUE")
-            # 
-            # aux <- J("java.lang.Boolean")
-            # j_stationary <- new(aux, j_boolean)
-            
-            
-            # if (file.exists("dbn_structure_dot")) file.remove("dbn_structure_dot")
-            # if (file.exists("dbn_structure_output")) file.remove("dbn_structure_output")
-            # if (file.exists("scores_transition_output.csv")) file.remove("scores_transition_output.csv")
-            # if (file.exists("subject_scores.csv")) file.remove("subject_scores.csv")
-            
-            #if (file.exists(aux_dot_name)) file.remove(aux_dot_name)
-            
+
             isolate(java_object <- new(jDialog, j_filepath, as.integer(input$markov_lag),as.integer(input$previous_parents),input$checkbox_stationary,j_score))
             
-            #aux_dot_name <<- paste0(paste(as.integer(Sys.time()), sep = "_" ),"")
-            
-            #file.rename("dbn_structure_dot",aux_dot_name)
-            
+
             ############ Take care of the files
             transition_scores<<-read.csv("scores_transition_output.csv")
             subject_scores<<-read.csv("subject_scores_output.csv")
@@ -1048,8 +826,6 @@ server <- function(input, output, session) {
             if(input$checkbox_stationary){
 
               output$structure_diagram_grviz <- renderGrViz({
-                #shinyjs::show(id = "diagram_div")
-                #diagram_path <- paste(getwd(), "/dbn_structure_dot", sep = "")
                 grViz("dbn_structure_dot")
  
               })
@@ -1076,11 +852,6 @@ server <- function(input, output, session) {
               
               
             }
-              
-              
-
-            
-            ############
             
             
             ############# DOWNLOAD BUTTONS:
@@ -1127,126 +898,82 @@ server <- function(input, output, session) {
         }
         
         if (input$third_button == 0){
+          #### First time in the score-analysis phase nothing is selected
+          Score_analysis_transition_mode <<- "D" 
+          Score_analysis_subject_mode <<- "D"
         }else{
           ########### ADVANCE TO SCORE HISTOGRAMS AND THRESHOLDS
+            print("MODEL TRAINED")
+            Tukey_threshold <<- 0
+            GMM_threshold <<- 0
+            Threshold_plot <<- 0 # This only done once in the beginning after the oberve_event
+
+            # Flag to know what is the strategy currently selected for transitions
+            #Score_analysis_transition_mode <<- "D" # Default, after training
+            #### MODES:
+            ## Default: D
+            ## Transition Tukey: TT
+            ## Transition GMM : TG
+            ## Transition Manual: TM
             
-            #print("normal")
+            # Flag to know what is the strategy currently selected for subjects
+            #Score_analysis_subject_mode <<- "D" # Default, after training
+            #### MODES:
+            ## Default: D
+            ## Subject Tukey: ST
+            ## Subject GMM : SG
+            ## Subject Manual: SM
+            
+            
             shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade") 
             
-            ################## BUTTON FOR TUKEY SCORE_ANALYSIS
+            print(Score_analysis_transition_mode)
+            if(Score_analysis_transition_mode != "D"){ # Not the first model trained, recompute the selected modes
+              if(Score_analysis_transition_mode=="TT") click("Tukey_button") # Simulate the clicking
+              if(Score_analysis_transition_mode=="TG") click("GMM_button") # Simulate the clicking
+              flag_transition_train <<- TRUE
+            }
+            print(Score_analysis_subject_mode)
+            if(Score_analysis_subject_mode != "D"){ # Not the first model trained, recompute the selected modes
+              if(Score_analysis_subject_mode=="ST") click("Tukey_button_sub") # Simulate the clicking
+              if(Score_analysis_subject_mode=="SG") click("GMM_button_sub") # Simulate the clicking
+              flag_subject_train <<- TRUE
+            }
+            
+            ################## BUTTON FOR TUKEY TRANSITION SCORE_ANALYSIS
             observeEvent(input$Tukey_button, {
-              
-              #print("Tukey pressed")
-              output$transition_hist_plot <- renderPlot({
-                # if (input$fourth_button == 0){
-                # }else{
-                # }
+            
+                print("Tukey pressed")
+                shinyjs::disable(id = "download_transition")
                 
-                #print("normal before")
-                # observeEvent(input$Tukey_button, {
-                #   print("Tukey pressed")
-                #   
-                #   aux <- transition_scores
-                #   aux$subject_id <- NULL
-                #   
-                #   aux <- as.vector(t(aux))
-                #   score_array <- aux ## array with all scores in serie
-                #   
-                #   bins <- seq(min(score_array), max(score_array), length.out = input$bins_trans + 1)
-                #   
-                #   Tukey_threshold <<- Threshold(score_array)
-                #   
-                #   Threshold_plot <<- Tukey_threshold
-                # 
-                #   if(input$Threshold_slider){
-                #     Threshold_plot <<- input$Threshold_slider
-                #     #print(as.numeric(Threshold_plot))
-                #   }else{
-                #     #print("IN")
-                #     updateSliderInput(session, "Threshold_slider", value = as.numeric(Tukey_threshold),
-                #                       min = as.integer(min(score_array), digits = 2), max = 0)
-                #   }
-                #   
-                #   if(length(which(score_array < Threshold_plot))==0){ # No Outliers Detected for this threshold
-                #     
-                #     no_outliers <<- TRUE ########## FLAG
-                #     
-                #     hist(score_array, 
-                #          main="Histogram for Transition Outlier Scores", 
-                #          xlab="Scores", 
-                #          border="black", 
-                #          col = "springgreen3",
-                #          las=1, 
-                #          breaks=bins) # breaks are the number of breakpoints which determine the bins
-                #     legend("topright", c("Normal"), col=c("springgreen3"), lwd=10)
-                #     aux <- paste("Threshold: ", round(Threshold_plot, digits = 2))
-                #     mtext(aux, side=3)
-                #     abline(v=Threshold_plot,col="red", lwd=2) # Computed Threshold
-                #     rm(aux)
-                #     
-                #   }else{
-                #     ##### FOR THE COLORS:
-                #     red_array <- array("red3",dim = c(1,min(which(bins > Threshold_plot))-2)) # -2 because of 0 and yellow
-                #     green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > Threshold_plot))))
-                #     
-                #     colours <- cbind(red_array,"orange",green_array)
-                #     
-                #     hist(score_array, 
-                #          main="Histogram for Transition Outlier Scores using Tukey's score-analysis", 
-                #          xlab="Scores", 
-                #          border="black", 
-                #          col = colours,
-                #          las=1, 
-                #          breaks=bins) # breaks are the number of breakpoints which determine the bins
-                #     
-                #     legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
-                #     aux <- paste("Tukey's Threshold: ", round(Threshold_plot, digits = 2))
-                #     mtext(aux, side=3)
-                #     abline(v=Threshold_plot,col="red", lwd=2) # Computed Threshold
-                #     rm(aux)
-                #   }
-                #   
-                #   updateSliderInput(session, "bins_trans", value = 30, min = 1, max = 50)
-                #   
-                #   updateSliderInput(session, "slider_color_trans", value = c(0, nrow(transition_scores)%/%10), # Initial value is 10%
-                #                     min = 0, max = nrow(transition_scores))
-                #   
-                # })
+                aux <- transition_scores
+                aux$subject_id <- NULL
+                aux <- as.vector(t(aux))
+                score_array <- aux ## array with all scores in serie
                 
-                #print("normal after")
-                
-                if(Tukey_threshold == 0){ # first time
+                if(Tukey_threshold == 0){ # first time after training
                   updateSliderInput(session, "bins_trans", value = 30, min = 1, max = 50) # estava bins_trans
                   
                   updateSliderInput(session, "slider_color_trans", value = c(0, nrow(transition_scores)%/%10), # Initial value is 10%
                                     min = 0, max = nrow(transition_scores))
+                  print("Performing Tukey")
+                  
+                  Tukey_threshold <<- Threshold(score_array)
                 }
-                
-                shinyjs::disable(id = "download_transition")
-                aux <- transition_scores
-                
-                
-                aux$subject_id <- NULL
-                
-                aux <- as.vector(t(aux))
-                score_array <- aux ## array with all scores in serie
-                
-                bins <- seq(min(score_array), max(score_array), length.out = input$bins_trans + 1)
-                
-                Tukey_threshold <<- Threshold(score_array)
                 
                 
                 ############################# OUTLIERS DOWNLOAD BUTTON
                 aux_outlier <- transition_scores
                 subject_id <- aux_outlier$subject_id
                 aux_outlier$subject_id <- NULL
-
-                # aux_outlier$outlier=factor(c(0,1))
-                # aux_outlier[aux_outlier$score<=Tukey_threshold,]$outlier <- 1 # Anomalies
-                # aux_outlier[aux_outlier$score>Tukey_threshold,]$outlier <- 0 # Normal
                 
-                aux_outlier[aux_outlier<=Tukey_threshold] <- 1 # Anomalies
-                aux_outlier[aux_outlier>Tukey_threshold & aux_outlier!=1] <- 0 # Normal
+                if(length(aux_outlier[aux_outlier<=Tukey_threshold])==0){ # Only normal
+                  aux_outlier[aux_outlier>Tukey_threshold & aux_outlier!=1] <- 0 # Normal
+                }else{
+                  aux_outlier[aux_outlier<=Tukey_threshold] <- 1 # Anomalies
+                  if(length(aux_outlier[aux_outlier>Tukey_threshold & aux_outlier!=1])!=0) # There are normals
+                    aux_outlier[aux_outlier>Tukey_threshold & aux_outlier!=1] <- 0 # Normal
+                }
                 
                 aux_outlier <- cbind(subject_id, aux_outlier)
                 
@@ -1263,128 +990,62 @@ server <- function(input, output, session) {
                 )
                 ###############################
                 
+                Score_analysis_transition_mode <<- "TT" # Transition Tukey mode
                 
-                #print(as.numeric(Tukey_threshold))
+                Tukey_threshold <<- unname(Tukey_threshold) #### It was a named numeric
                 
-                # print("WTF1")
-                # if(exists("aux_text")){
-                #   print("WTF2")
-                #   print(aux_text)
-                #   # Not the first time, so its probably the user changing parameters
-                # }else{
-                #   # First time, we only want Tuckey_Threshold to compute once in the beginning
-                #   print("WTF3")
-                #   aux_text <<- 1
-                #   output$Tuckey_threshold_text <- renderText({
-                #     paste("Tukey Threshold: ",round(Tukey_threshold, digits = 2))
-                #   })
-                # }
-
-                #Threshold_plot <<- Tukey_threshold
-                
-                # if(input$Threshold_slider){
-                #   Threshold_plot <- input$Threshold_slider
-                # }
-                  
-                #if(input$Threshold_slider){
-                  #Threshold_plot <<- input$Threshold_slider
-                  #print(as.numeric(Threshold_plot))
-                #}else{
-                  #print("IN")
-                  updateSliderInput(session, "Threshold_slider", value = as.numeric(Tukey_threshold),
-                                    min = as.integer(min(score_array), digits = 2), max = 0)
-                #}
-                
-                if(length(which(score_array < Tukey_threshold))==0){ # No Outliers Detected for this threshold
-                  
-                  no_outliers <<- TRUE ########## FLAG
-                  
-                  hist(score_array, 
-                       main="Histogram for Transition Outlier Scores using Tukey's score-analysis", 
-                       xlab="Scores", 
-                       border="black", 
-                       col = "springgreen3",
-                       las=1, 
-                       breaks=bins) # breaks are the number of breakpoints which determine the bins
-                  legend("topright", c("Normal"), col=c("springgreen3"), lwd=10)
-                  aux <- paste("Tukey's threshold: ", round(Tukey_threshold, digits = 2))
-                  mtext(aux, side=3)
-                  abline(v=Tukey_threshold,col="red", lwd=2) # Computed Threshold
-                  rm(aux)
-                  shinyjs::show(id = "sliders_trans")
-                  
+                if(round(Tukey_threshold, digits = 2) < as.integer(min(score_array), digits = 2)) # Tukey can give values outside the domain
+                {
+                  updateSliderInput(session, "Threshold_slider", value = round(Tukey_threshold, digits = 2),
+                                    min = round(Tukey_threshold, digits = 2), max = round(as.double(max(score_array)), digits = 2)-0.01)
                 }else{
-                  ##### FOR THE COLORS:
-                  red_array <- array("red3",dim = c(1,min(which(bins > Tukey_threshold))-2)) # -2 because of 0 and yellow
-                  green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > Tukey_threshold))))
-                  
-                  colours <- cbind(red_array,"orange",green_array)
-                  
-                  hist(score_array, 
-                       main="Histogram for Transition Outlier Scores using Tukey's score-analysis", 
-                       xlab="Scores", 
-                       border="black", 
-                       col = colours,
-                       las=1, 
-                       breaks=bins) # breaks are the number of breakpoints which determine the bins
-                  
+                  updateSliderInput(session, "Threshold_slider", value = round(Tukey_threshold, digits = 2),
+                                    min = as.integer(min(score_array), digits = 2), max = round(as.double(max(score_array)), digits = 2)-0.01)
+                }
+                # updateSliderInput(session, "Threshold_slider", value = as.numeric(Tukey_threshold),
+                #                     min = as.integer(min(score_array), digits = 2), max = round(as.double(max(score_array)), digits = 2)-0.01)
+                
+
+                output$transition_hist_plot <- renderPlot({
+                  bins <- seq(min(score_array), max(score_array), length.out = input$bins_trans + 1)
+                  histogram_plot(Score_analysis_mode = Score_analysis_transition_mode,score_array=score_array,Threshold = Tukey_threshold, bins=bins)
                   legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
                   aux <- paste("Tukey's threshold: ", round(Tukey_threshold, digits = 2))
                   mtext(aux, side=3)
                   abline(v=Tukey_threshold,col="red", lwd=2) # Computed Threshold
                   rm(aux)
-                  shinyjs::show(id = "sliders_trans")
-                }
+                })
                 
-                # updateSliderInput(session, "bins_trans", value = 30, min = 1, max = 50)
-                # 
-                # updateSliderInput(session, "slider_color_trans", value = c(0, nrow(transition_scores)%/%10), # Initial value is 10%
-                #                   min = 0, max = nrow(transition_scores))
-            
+              # For the color matrix that shows the outliers:
+              # Reactive to Subject Slider
+              output$transition_mat_plot <- renderPlot({
+                  
+                x <- as.matrix(transition_scores)
+                x <- matrix(x, ncol = ncol(transition_scores), dimnames = NULL)
+                x <- t(x)
+                
+                x1=melt(x)
+                names(x1)=c("x","y","color")
+                
+                x1 <- x1[!x1$x==1,]
+                
+                x1$color=factor(x1$color<Tukey_threshold)
+                levels(x1$color)=c("Normal","Outlier")
+                shinyjs::show(id = "sliders_trans")
+                aux <- x1[x1$y>input$slider_color_trans[1] & x1$y<input$slider_color_trans[2],]
+                
+                ggplot(data = aux, aes(x=x-1.5, y=y, fill=color)) + ggtitle("Transition Outlierness by subject") +
+                  theme(plot.title = element_text(hjust = 0.5, color="black", size=14, face="bold")) + labs(x = "Transition", y = "Subject_id") +
+                  geom_tile() + scale_fill_manual(values=c("Outlier"="red", "Normal"="springgreen3"))
+                
+              })
             })
-          
-
-          # For the color matrix that shows the outliers:
-          # Reactive to Subject Slider
-          output$transition_mat_plot <- renderPlot({
-            # if (input$fourth_button == 0){
-            # 
-            # }else{
-            # }
             
-            #if(input$Threshold_slider){}
-              
-            x <- as.matrix(transition_scores)
-            x <- matrix(x, ncol = ncol(transition_scores), dimnames = NULL)
-            x <- t(x)
-            
-            x1=melt(x)
-            names(x1)=c("x","y","color")
-            
-            x1 <- x1[!x1$x==1,]
-            
-            
-            x1$color=factor(x1$color<Tukey_threshold)
-            levels(x1$color)=c("Normal","Outlier")
-            
-            shinyjs::show(id = "sliders_trans")
-
-            aux <- x1[x1$y>input$slider_color_trans[1] & x1$y<input$slider_color_trans[2],]
-            
-            ggplot(data = aux, aes(x=x-1.5, y=y, fill=color)) + ggtitle("Transition Outlierness by subject") +
-              theme(plot.title = element_text(hjust = 0.5, color="black", size=14, face="bold")) + labs(x = "Transition", y = "Subject_id") +
-              geom_tile() + scale_fill_manual(values=c("Outlier"="red", "Normal"="springgreen3"))
-            
-          })
-        })
-            
-            
-            
-            ################################ GMM SCORE_ANALYSIS
+            ################## GMM TRANSITION SCORE_ANALYSIS
             observeEvent(input$GMM_button, {
               
               #print("GMM pressed")
-              output$transition_hist_plot <- renderPlot({
+              #output$transition_hist_plot <- renderPlot({
                 
                 if(GMM_threshold == 0){ # first time
                   updateSliderInput(session, "bins_trans", value = 30, min = 1, max = 50) # estava bins_trans
@@ -1394,27 +1055,31 @@ server <- function(input, output, session) {
                 }
                 
                 shinyjs::disable(id = "download_transition")
-                # if (input$fourth_button == 0){
-                # }else{
-                # }
                 aux <- transition_scores
                 aux$subject_id <- NULL
                 aux <- as.vector(t(aux))
                 score_array <- aux ## array with all scores in serie
+                
                 bins <- seq(min(score_array), max(score_array), length.out = input$bins_trans + 1)
                 
-                #print(head(aux))
-                #print(head(score_array))
                 
-                GMM_threshold <<- GMM_score_analysis(score_array)
-                
+                if(GMM_threshold == 0){ # Dont recompute if the model is the same
+                  shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade")
+                  GMM_threshold <<- GMM_score_analysis(score_array)
+                  shinyjs::hide(id = "loading-content", anim = TRUE, animType = "fade")
+                }
                 ############################# OUTLIERS DOWNLOAD BUTTON
                 aux_outlier <- transition_scores
                 subject_id <- aux_outlier$subject_id
                 aux_outlier$subject_id <- NULL
                 
-                aux_outlier[aux_outlier<=GMM_threshold] <- 1 # Anomalies
-                aux_outlier[aux_outlier>GMM_threshold & aux_outlier!=1] <- 0 # Normal
+                if(length(aux_outlier[aux_outlier<=GMM_threshold])==0){ # Only normal
+                  aux_outlier[aux_outlier>GMM_threshold & aux_outlier!=1] <- 0 # Normal
+                }else{
+                  aux_outlier[aux_outlier<=GMM_threshold] <- 1 # Anomalies
+                  if(length(aux_outlier[aux_outlier>GMM_threshold & aux_outlier!=1])!=0) # There are normals
+                    aux_outlier[aux_outlier>GMM_threshold & aux_outlier!=1] <- 0 # Normal
+                }
                 
                 aux_outlier <- cbind(subject_id, aux_outlier)
                 
@@ -1431,75 +1096,24 @@ server <- function(input, output, session) {
                 )
                 ###############################
                 
+                updateSliderInput(session, "Threshold_slider", value = as.numeric(GMM_threshold),
+                                  min = as.integer(min(score_array), digits = 2), max = round(as.double(max(score_array)), digits = 2)-0.01)
                 
-                #Threshold_plot <<- GMM_threshold
-                #print(Threshold_plot)
-
-                #if(input$Threshold_slider){
-                  #print("ARE U HERE?")
-                  #GMM_threshold <<- input$Threshold_slider
-                #}else{
-                  updateSliderInput(session, "Threshold_slider", value = as.numeric(GMM_threshold),
-                                    min = as.integer(min(score_array), digits = 2), max = 0)
-                #}
-                if(length(which(score_array < GMM_threshold))==0){ # No Outliers Detected for this threshold
-                  
-                  no_outliers <<- TRUE ########## FLAG
-                  hist(score_array, 
-                       main="Histogram for Transition Outlier Scores using GMM's score-analysis", 
-                       xlab="Scores", 
-                       border="black", 
-                       col = "springgreen3",
-                       las=1, 
-                       breaks=bins) # breaks are the number of breakpoints which determine the bins
-                  legend("topright", c("Normal"), col=c("springgreen3"), lwd=10)
-                  aux <- paste("GMM's threshold: ", round(GMM_threshold, digits = 2))
-                  mtext(aux, side=3)
-                  abline(v=GMM_threshold,col="red", lwd=2) # Computed Threshold
-                  #print(GMM_threshold)
-                  rm(aux)
-                  shinyjs::show(id = "sliders_trans")
-                  #rm(GMM_threshold)
-                }else{
-                  ##### FOR THE COLORS:
-                  red_array <- array("red3",dim = c(1,min(which(bins > GMM_threshold))-2)) # -2 because of 0 and yellow
-                  green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > GMM_threshold))))
-                  
-                  colours <- cbind(red_array,"orange",green_array)
-                  
-                  hist(score_array, 
-                       main="Histogram for Transition Outlier Scores using GMM's score-analysis", 
-                       xlab="Scores", 
-                       border="black", 
-                       col = colours,
-                       las=1, 
-                       breaks=bins) # breaks are the number of breakpoints which determine the bins
-                  
+                Score_analysis_transition_mode <<- "TG" # Transition GMM mode
+                
+                output$transition_hist_plot <- renderPlot({
+                  bins <- seq(min(score_array), max(score_array), length.out = input$bins_trans + 1)
+                  histogram_plot(Score_analysis_mode = Score_analysis_transition_mode,score_array=score_array,Threshold = GMM_threshold, bins=bins)
                   legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
                   aux <- paste("GMM's threshold: ", round(GMM_threshold, digits = 2))
                   mtext(aux, side=3)
                   abline(v=GMM_threshold,col="red", lwd=2) # Computed Threshold
                   rm(aux)
-                  shinyjs::show(id = "sliders_trans")
-                  #rm(GMM_threshold)
-                }
+                })
                 
-                # updateSliderInput(session, "bins_trans", value = 30, min = 1, max = 50)
-                # 
-                # updateSliderInput(session, "slider_color_trans", value = c(0, nrow(transition_scores)%/%10), # Initial value is 10%
-                #                   min = 0, max = nrow(transition_scores))
-                
-              })
-              
               # For the color matrix that shows the outliers:
               # Reactive to Subject Slider
               output$transition_mat_plot <- renderPlot({
-                # if (input$fourth_button == 0){
-                #   
-                # }else{
-                # }
-                
-                #if(input$Threshold_slider){}
                 
                 x <- as.matrix(transition_scores)
                 x <- matrix(x, ncol = ncol(transition_scores), dimnames = NULL)
@@ -1522,121 +1136,37 @@ server <- function(input, output, session) {
               })
             })
             
-
-            
-            
-            
-            
-            
-
-            # if(input$Threshold_slider){
-            #   print("ARE U HERE?")
-            #   Threshold_plot <<- input$Threshold_slider
-            # 
-            #   output$transition_hist_plot <- renderPlot({
-            #     if (input$fourth_button == 0){
-            #     }else{
-            #     }
-            #     aux <- transition_scores
-            #     aux$subject_id <- NULL
-            #     aux <- as.vector(t(aux))
-            #     score_array <- aux ## array with all scores in serie
-            #     bins <- seq(min(score_array), max(score_array), length.out = input$bins_trans + 1)
-            # 
-            #     Threshold_plot <<- GMM_score_analysis(score_array)
-            #     updateSliderInput(session, "Threshold_slider", value = as.numeric(Threshold_plot),
-            #                       min = as.integer(min(score_array), digits = 2), max = 0)
-            #     #}
-            #     if(length(which(score_array < Threshold_plot))==0){ # No Outliers Detected for this threshold
-            #       
-            #       no_outliers <<- TRUE ########## FLAG
-            #       hist(score_array, 
-            #            main="Histogram for Transition Outlier Scores", 
-            #            xlab="Scores", 
-            #            border="black", 
-            #            col = "springgreen3",
-            #            las=1, 
-            #            breaks=bins) # breaks are the number of breakpoints which determine the bins
-            #       legend("topright", c("Normal"), col=c("springgreen3"), lwd=10)
-            #       aux <- paste("Threshold: ", round(Threshold_plot, digits = 2))
-            #       mtext(aux, side=3)
-            #       abline(v=Threshold_plot,col="red", lwd=2) # Computed Threshold
-            #       print(Threshold_plot)
-            #       rm(aux)
-            #       #rm(GMM_threshold)
-            #     }else{
-            #       ##### FOR THE COLORS:
-            #       red_array <- array("red3",dim = c(1,min(which(bins > Threshold_plot))-2)) # -2 because of 0 and yellow
-            #       green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > Threshold_plot))))
-            #       
-            #       colours <- cbind(red_array,"orange",green_array)
-            #       
-            #       hist(score_array, 
-            #            main="Histogram for Transition Outlier Scores using GMM's score-analysis", 
-            #            xlab="Scores", 
-            #            border="black", 
-            #            col = colours,
-            #            las=1, 
-            #            breaks=bins) # breaks are the number of breakpoints which determine the bins
-            #       
-            #       legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
-            #       aux <- paste("GMM's threshold: ", round(Threshold_plot, digits = 2))
-            #       mtext(aux, side=3)
-            #       abline(v=Threshold_plot,col="red", lwd=2) # Computed Threshold
-            #       rm(aux)
-            #     }
-            #     
-            #     updateSliderInput(session, "bins_trans", value = 30, min = 1, max = 50)
-            #     updateSliderInput(session, "slider_color_trans", value = c(0, nrow(transition_scores)%/%10), # Initial value is 10%
-            #                       min = 0, max = nrow(transition_scores))
-            #     
-            #   })
-            #   
-            #   # For the color matrix that shows the outliers:
-            #   # Reactive to Subject Slider
-            #   output$transition_mat_plot <- renderPlot({
-            #     if (input$fourth_button == 0){
-            #       
-            #     }else{
-            #     }
-            #     
-            #     if(input$Threshold_slider){}
-            #     
-            #     x <- as.matrix(transition_scores)
-            #     x <- matrix(x, ncol = ncol(transition_scores), dimnames = NULL)
-            #     x <- t(x)
-            #     
-            #     x1=melt(x)
-            #     names(x1)=c("x","y","color")
-            #     x1 <- x1[!x1$x==1,]
-            #     x1$color=factor(x1$color<Threshold_plot)
-            #     levels(x1$color)=c("Normal","Outlier")
-            #     
-            #     aux <- x1[x1$y>input$slider_color_trans[1] & x1$y<input$slider_color_trans[2],]
-            #     
-            #     ggplot(data = aux, aes(x=x-1.5, y=y, fill=color)) + labs(title="Transition Outlierness by subject", x = "Transition", y = "Subject_id") + 
-            #       geom_tile() + scale_fill_manual(values=c("Outlier"="red", "Normal"="springgreen3"))
-            #     
-            #   })
-            #   
-            # }
-            
-            
-            #### This is only done in the begining
-            Tukey_threshold<<-0
-            GMM_threshold<<-0
-            
-            
-          #if(exists("Threshold_plot")){ # First time, dont run this
+            No_react <<- FALSE
+            ################# MANUA TRANSITIONL SCORE_ANALYSIS
             observeEvent(input$Threshold_slider,{
+              if(No_react){ #### So that the slider does not react to itself
+                No_react <<- FALSE
+                return()
+              }
               
-              #print("CUSTOM")
+              if(flag_transition_train && Score_analysis_transition_mode!="TM"){ # There was another training
+                print("Another training")
+                flag_transition_train <<- FALSE
+                return()
+              }
+              
               Threshold_plot <<- input$Threshold_slider
-              #print(Threshold_plot)
-              #print(as.numeric(Tukey_threshold))
-              #print(as.numeric(GMM_threshold))
-              if(Threshold_plot == round(GMM_threshold, digits = 2) || Threshold_plot == round(Tukey_threshold, digits = 2)){ # The user pressed a strategy button
+              
+              if((Threshold_plot==0 && GMM_threshold==0 && Tukey_threshold==0)){ #### First time
+                aux <- transition_scores
+                aux$subject_id <- NULL
+                No_react <<- TRUE
                 
+                #print("bro...")
+                updateSliderInput(session, "Threshold_slider", value = as.integer(min(aux), digits = 2),
+                                  min = as.integer(min(aux), digits = 2), max = round(as.double(max(aux)), digits = 2)-0.01)
+                
+              }
+              
+              print("CUSTOM")
+
+              if((Threshold_plot == round(GMM_threshold, digits = 2) || Threshold_plot == round(Tukey_threshold, digits = 2))){ # The user pressed a strategy button
+                 #print("Strategy") ### A strategy button was pressed
               }else{
                 
                 if(Threshold_plot == 0){ # first time
@@ -1652,9 +1182,18 @@ server <- function(input, output, session) {
                 subject_id <- aux_outlier$subject_id
                 aux_outlier$subject_id <- NULL
                 
-                aux_outlier[aux_outlier<=Threshold_plot] <- 1 # Anomalies
-                aux_outlier[aux_outlier>Threshold_plot & aux_outlier!=1] <- 0 # Normal
-                
+                aux <- as.vector(t(aux_outlier))
+                score_array <- aux ## array with all scores in serie
+
+                if(length(aux_outlier[aux_outlier<=Threshold_plot])==0){ # Only normal
+                  print("only normal")
+                  aux_outlier[aux_outlier>Threshold_plot & aux_outlier!=1] <- 0 # Normal
+                }else{
+                  aux_outlier[aux_outlier<=Threshold_plot] <- 1 # Anomalies
+                  if(length(aux_outlier[aux_outlier>Threshold_plot & aux_outlier!=1])!=0) # There are normals
+                    aux_outlier[aux_outlier>Threshold_plot & aux_outlier!=1] <- 0 # Normal
+                }
+
                 aux_outlier <- cbind(subject_id, aux_outlier)
                 
                 shinyjs::enable(id = "download_transition")
@@ -1670,73 +1209,23 @@ server <- function(input, output, session) {
                 )
                 ###############################
 
-
+          
+                Score_analysis_transition_mode <<- "TM" # Transition Manual mode
+                
                 output$transition_hist_plot <- renderPlot({
-                  # if (input$fourth_button == 0){
-                  # }else{
-                  # }
-                  aux <- transition_scores
-                  
-                  aux$subject_id <- NULL
-                  aux <- as.vector(t(aux))
-                  score_array <- aux ## array with all scores in serie
                   bins <- seq(min(score_array), max(score_array), length.out = input$bins_trans + 1)
-
-
-                  if(length(which(score_array < Threshold_plot))==0){ # No Outliers Detected for this threshold
-
-                    no_outliers <<- TRUE ########## FLAG
-                    hist(score_array,
-                         main="Histogram for Transition Outlier Scores",
-                         xlab="Scores",
-                         border="black",
-                         col = "springgreen3",
-                         las=1,
-                         breaks=bins) # breaks are the number of breakpoints which determine the bins
-                    legend("topright", c("Normal"), col=c("springgreen3"), lwd=10)
-                    aux <- paste("Threshold: ", round(Threshold_plot, digits = 2))
-                    mtext(aux, side=3)
-                    abline(v=Threshold_plot,col="red", lwd=2) # Computed Threshold
-                    #print(Threshold_plot)
-                    rm(aux)
-                    shinyjs::show(id = "sliders_trans")
-                    #rm(GMM_threshold)
-                  }else{
-                    ##### FOR THE COLORS:
-                    red_array <- array("red3",dim = c(1,min(which(bins > Threshold_plot))-2)) # -2 because of 0 and yellow
-                    green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > Threshold_plot))))
-
-                    colours <- cbind(red_array,"orange",green_array)
-
-                    hist(score_array,
-                         main="Histogram for Transition Outlier Scores",
-                         xlab="Scores",
-                         border="black",
-                         col = colours,
-                         las=1,
-                         breaks=bins) # breaks are the number of breakpoints which determine the bins
-
-                    legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
-                    aux <- paste("Threshold: ", round(Threshold_plot, digits = 2))
-                    mtext(aux, side=3)
-                    abline(v=Threshold_plot,col="red", lwd=2) # Computed Threshold
-                    rm(aux)
-                    shinyjs::show(id = "sliders_trans")
-                  }
-
-                  # updateSliderInput(session, "bins_trans", value = 30, min = 1, max = 50)
-                  # updateSliderInput(session, "slider_color_trans", value = c(0, nrow(transition_scores)%/%10), # Initial value is 10%
-                  #                   min = 0, max = nrow(transition_scores))
-
+                  histogram_plot(Score_analysis_mode = Score_analysis_transition_mode,score_array=score_array,Threshold = Threshold_plot, bins=bins)
+                  legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
+                  aux <- paste("Threshold: ", round(Threshold_plot, digits = 2))
+                  mtext(aux, side=3)
+                  abline(v=Threshold_plot,col="red", lwd=2) # Computed Threshold
+                  rm(aux)
                 })
+                
 
                 # For the color matrix that shows the outliers:
                 # Reactive to Subject Slider
                 output$transition_mat_plot <- renderPlot({
-                  # if (input$fourth_button == 0){
-                  # 
-                  # }else{
-                  # }
 
                   if(input$Threshold_slider){}
 
@@ -1759,20 +1248,25 @@ server <- function(input, output, session) {
                     geom_tile() + scale_fill_manual(values=c("Outlier"="red", "Normal"="springgreen3"))
 
                 })
+                
+                aux <- transition_scores
+                aux$subject_id <- NULL
+                updateSliderInput(session, "Threshold_slider", value = Threshold_plot,
+                                  min = as.integer(min(aux), digits = 2), max = round(as.double(max(aux)), digits = 2)-0.01)
+                
               }
             })
-          #}
+            
+            #### This is only done in the begining
+            Tukey_threshold_subje <<- 0
+            GMM_threshold_sub <<- 0
+            Threshold_plot_sub <<- 0 # This only done once in the beginning after the oberve_event
+            
+            ################## BUTTON FOR TUKEY SUBJECT SCORE_ANALYSIS
+            observeEvent(input$Tukey_button_sub, {
           
-            
-          Threshold_plot<<-0 # This only done once in the beginning after the oberve_event
-            
-            
-          observeEvent(input$Tukey_button_sub, {
-          
-            output$subject_hist_plot <- renderPlot({
-               # if (input$fourth_button == 0){ #&& n_subjects > 1){ ### IF THERE IS ONLY ONE SUBJECT, THERE IS NO LOGIC IN SHOWING
-               # }else{
-               # }
+              #output$subject_hist_plot <- renderPlot({
+              print("Tukey Subject")
               
               if(Tukey_threshold_subje == 0){ # first time
                 updateSliderInput(session, "bins_subje", value = 30, min = 1, max = 50) # estava bins_trans
@@ -1789,17 +1283,24 @@ server <- function(input, output, session) {
               aux <- as.vector(t(aux))
               score_array <- aux ## array with all scores in serie
               
-              bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
+              #bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
               
-              Tukey_threshold_subje <<- Threshold(score_array)
+              if(Tukey_threshold_subje==0)
+                Tukey_threshold_subje <<- Threshold(score_array)
               
               ############################# OUTLIERS DOWNLOAD BUTTON
               aux_subj <- subject_scores
               aux_subj$outlier <- NULL
-              
+   
               aux_subj$outlier=factor(c(0,1))
-              aux_subj[aux_subj$score<=Tukey_threshold_subje,]$outlier <- 1 # Anomalies
-              aux_subj[aux_subj$score>Tukey_threshold_subje & aux_subj$score!=1,]$outlier <- 0 # Normal
+              if(nrow(aux_subj[aux_subj$score<=Tukey_threshold_subje,])==0){ # No anomalies
+                aux_subj[aux_subj$score>Tukey_threshold_subje & aux_subj$score!=1,]$outlier <- 0 # Only Normal
+              }else{
+                aux_subj[aux_subj$score<=Tukey_threshold_subje,]$outlier <- 1 # Anomalies
+                if(nrow(aux_subj[aux_subj$score>Tukey_threshold_subje & aux_subj$score!=1,])!=0){ #Are there normals?
+                  aux_subj[aux_subj$score>Tukey_threshold_subje & aux_subj$score!=1,]$outlier <- 0 # Normal
+                }
+              }
               
               shinyjs::enable(id = "download_subjects")
               output$download_subjects <- downloadHandler(
@@ -1814,70 +1315,36 @@ server <- function(input, output, session) {
               )
               ###############################
               
+              Score_analysis_subject_mode <<- "ST"
               
-              updateSliderInput(session, "Threshold_slider_sub", value = as.numeric(Tukey_threshold_subje),
-                                min = as.integer(min(score_array), digits = 2), max = 0)
+              Tukey_threshold_subje <<- unname(Tukey_threshold_subje) #### It was a named numeric
               
-              
-              if(length(which(score_array < Tukey_threshold_subje))==0){ # No Outliers Detected for this threshold
-                
-                no_outliers <<- TRUE ########## FLAG
-                shinyjs::show(id = "sliders_subje")
-                hist(score_array, 
-                     main="Histogram for Subject Outlier Scores using Tukey's strategy", 
-                     xlab="Scores", 
-                     border="black", 
-                     col = "springgreen3",
-                     las=1, 
-                     breaks=bins) # breaks are the number of breakpoints which determine the bins
-                legend("topright", c("Normal"), col=c("springgreen3"), lwd=10)
-                aux <- paste("Tukey's threshold: ", round(Tukey_threshold_subje, digits = 2))
-                mtext(aux, side=3)
-                abline(v=Tukey_threshold_subje,col="red", lwd=2) # Computed Threshold
-                rm(aux)
-              
-                
+              #print("update slider Tukey")
+              #print(round(Tukey_threshold_subje, digits = 2))
+              if(round(Tukey_threshold_subje, digits = 2) < as.integer(min(score_array), digits = 2)) # Tukey can sometimes give a threshold outside the domain
+              {
+                updateSliderInput(session, "Threshold_slider_sub", value = round(Tukey_threshold_subje, digits = 2),
+                    min = round(Tukey_threshold_subje, digits = 2), max = round(as.double(max(score_array)), digits = 2)-0.01)
               }else{
-                ##### FOR THE COLORS:
-                red_array <- array("red3",dim = c(1,min(which(bins > Tukey_threshold_subje))-2)) # -2 because of 0 and yellow
-                green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > Tukey_threshold_subje))))
-                
-                colours <- cbind(red_array,"orange",green_array)
-                shinyjs::show(id = "sliders_subje")
-                
-                hist(score_array, 
-                     main="Histogram for Subject Outlier Scores using Tukey's strategy", 
-                     xlab="Scores", 
-                     border="black", 
-                     col = colours,
-                     las=1, 
-                     breaks=bins) # breaks are the number of breakpoints which determine the bins
-                
-                legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
-                aux <- paste("Tukey's threshold: ", round(Tukey_threshold_subje, digits = 2))
-                mtext(aux, side=3)
-                abline(v=Tukey_threshold_subje,col="red", lwd=2) # Computed Threshold
-                rm(aux)
-                
-                
+                 updateSliderInput(session, "Threshold_slider_sub", value = round(Tukey_threshold_subje, digits = 2),
+                    min = as.integer(min(score_array), digits = 2), max = round(as.double(max(score_array)), digits = 2)-0.01)
               }
+
+              output$subject_hist_plot <- renderPlot({
+                  bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
+                  histogram_plot(Score_analysis_mode = Score_analysis_subject_mode,score_array=score_array,Threshold = Tukey_threshold_subje, bins=bins)
+                  legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
+                  aux <- paste("Tukey's threshold: ", round(Tukey_threshold_subje, digits = 2))
+                  mtext(aux, side=3)
+                  abline(v=Tukey_threshold_subje,col="red", lwd=2) # Computed Threshold
+                  rm(aux)
+              })
               
-              # updateSliderInput(session, "bins_subje", value = 30, min = 1, max = 50) # estava bins_trans
-              # 
-              # updateSliderInput(session, "slider_color_subje", value = c(0, nrow(subject_scores)%/%10), # Initial value is 10%
-              #                   min = 0, max = nrow(subject_scores))
-              
-              
-            })
             
             # For the color matrix that shows the outliers:
             # Reactive to Subject Slider
             output$subject_mat_plot <- renderPlot({
-              # if (input$fourth_button == 0){ #&& n_subjects > 1){ ### IF THERE IS ONLY ONE SUBJECT, THERE IS NO LOGIC IN SHOWING
-              #   
-              # }else{
-              # }
-              
+
               x <- as.matrix(subject_scores)
               x <- matrix(x, ncol = ncol(subject_scores), dimnames = NULL)
               x <- t(x)
@@ -1905,16 +1372,9 @@ server <- function(input, output, session) {
           
           })
           
-          
-          
-          
-          
-          observeEvent(input$GMM_button_sub, {
+            ################## BUTTON FOR GMM SUBJECT SCORE_ANALYSIS
+            observeEvent(input$GMM_button_sub, {
             
-            output$subject_hist_plot <- renderPlot({
-              # if (input$fourth_button == 0 && n_subjects > 1){ ### IF THERE IS ONLY ONE SUBJECT, THERE IS NO LOGIC IN SHOWING
-              # }else{
-              # }
               
               if(GMM_threshold_sub == 0){ # first time
                 updateSliderInput(session, "bins_subje", value = 30, min = 1, max = 50) # estava bins_trans
@@ -1924,26 +1384,35 @@ server <- function(input, output, session) {
               }
               
               
+              
+              
               shinyjs::disable(id = "download_subjects")
               aux <- subject_scores
               aux$subject_id <- NULL
               aux <- as.vector(t(aux))
               score_array <- aux ## array with all scores in serie
-              bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
-              
-              #print(head(aux))
-              #print(head(score_array))
-              
-              GMM_threshold_sub <<- GMM_score_analysis(score_array)
-              
+              #bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
+
+              if(GMM_threshold_sub == 0){ # Dont recompute if the model is the same
+                shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade")
+                GMM_threshold_sub <<- GMM_score_analysis(score_array)
+                shinyjs::hide(id = "loading-content", anim = TRUE, animType = "fade")
+              }
               
               ############################# OUTLIERS DOWNLOAD BUTTON
               aux_subj <- subject_scores
               aux_subj$outlier <- NULL
               
               aux_subj$outlier=factor(c(0,1))
-              aux_subj[aux_subj$score<=GMM_threshold_sub,]$outlier <- 1 # Anomalies
-              aux_subj[aux_subj$score>GMM_threshold_sub & aux_subj$score!=1,]$outlier <- 0 # Normal
+              if(nrow(aux_subj[aux_subj$score<=GMM_threshold_sub,])==0){ # No anomalies
+                aux_subj[aux_subj$score>GMM_threshold_sub & aux_subj$score!=1,]$outlier <- 0 # Only Normal
+              }else{
+                aux_subj[aux_subj$score<=GMM_threshold_sub,]$outlier <- 1 # Anomalies
+                if(nrow(aux_subj[aux_subj$score>GMM_threshold_sub & aux_subj$score!=1,])!=0){ #Are there normals?
+                  aux_subj[aux_subj$score>GMM_threshold_sub & aux_subj$score!=1,]$outlier <- 0 # Normal
+                }
+              }
+              
               
               shinyjs::enable(id = "download_subjects")
               output$download_subjects <- downloadHandler(
@@ -1957,67 +1426,25 @@ server <- function(input, output, session) {
                 }
               )
               ###############################
-              
+
+              Score_analysis_subject_mode <<- "SG"
               
               updateSliderInput(session, "Threshold_slider_sub", value = as.numeric(GMM_threshold_sub),
-                                min = as.integer(min(score_array), digits = 2), max = 0)
+                                min = as.integer(min(score_array), digits = 2), max = round(as.double(max(score_array)), digits = 2)-0.01)
               
-              
-              if(length(which(score_array < GMM_threshold_sub))==0){ # No Outliers Detected for this threshold
-                
-                no_outliers <<- TRUE ########## FLAG
-                shinyjs::show(id = "sliders_subje")
-                hist(score_array, 
-                     main="Histogram for Subject Outlier Scores using GMM's strategy", 
-                     xlab="Scores", 
-                     border="black", 
-                     col = "springgreen3",
-                     las=1, 
-                     breaks=bins) # breaks are the number of breakpoints which determine the bins
-                legend("topright", c("Normal"), col=c("springgreen3"), lwd=10)
-                aux <- paste("GMM threshold: ", round(GMM_threshold_sub, digits = 2))
-                mtext(aux, side=3)
-                abline(v=GMM_threshold_sub,col="red", lwd=2) # Computed Threshold
-                rm(aux)
-                
-                
-              }else{
-                ##### FOR THE COLORS:
-                red_array <- array("red3",dim = c(1,min(which(bins > GMM_threshold_sub))-2)) # -2 because of 0 and yellow
-                green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > GMM_threshold_sub))))
-                
-                colours <- cbind(red_array,"orange",green_array)
-                shinyjs::show(id = "sliders_subje")
-                hist(score_array, 
-                     main="Histogram for Subject Outlier Scores using GMM's strategy", 
-                     xlab="Scores", 
-                     border="black", 
-                     col = colours,
-                     las=1, 
-                     breaks=bins) # breaks are the number of breakpoints which determine the bins
-                
+              output$subject_hist_plot <- renderPlot({
+                bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
+                histogram_plot(Score_analysis_mode = Score_analysis_subject_mode,score_array=score_array,Threshold = GMM_threshold_sub, bins=bins)
                 legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
-                aux <- paste("GMM threshold: ", round(GMM_threshold_sub, digits = 2))
+                aux <- paste("GMM's threshold: ", round(GMM_threshold_sub, digits = 2))
                 mtext(aux, side=3)
                 abline(v=GMM_threshold_sub,col="red", lwd=2) # Computed Threshold
                 rm(aux)
-              }
-              
-              # updateSliderInput(session, "bins_subje", value = 30, min = 1, max = 50)
-              # 
-              # updateSliderInput(session, "slider_color_subje", value = c(0, nrow(subject_scores)%/%10), # Initial value is 10%
-              #                   min = 0, max = nrow(subject_scores))
-              
-              
-            })
+              })
             
             # For the color matrix that shows the outliers:
             # Reactive to Subject Slider
             output$subject_mat_plot <- renderPlot({
-              # if (input$fourth_button == 0 && n_subjects > 1){ ### IF THERE IS ONLY ONE SUBJECT, THERE IS NO LOGIC IN SHOWING
-              #   
-              # }else{
-              # }
               
               x <- as.matrix(subject_scores)
               x <- matrix(x, ncol = ncol(subject_scores), dimnames = NULL)
@@ -2032,7 +1459,6 @@ server <- function(input, output, session) {
               x1$color=factor(x1$color<GMM_threshold_sub)
               levels(x1$color)=c("Normal","Outlier")
               
-              
               aux <- x1[x1$y>input$slider_color_subje[1] & x1$y<input$slider_color_subje[2],]
               
               ggplot(data = aux, aes(x=x-1.5, y=y, fill=color)) + ggtitle("Subject Outlierness by subject") +
@@ -2043,24 +1469,41 @@ server <- function(input, output, session) {
             
 
           })
-          
-          
-          
-          
-          #### This is only done in the begining
-          Tukey_threshold_subje<<-0
-          GMM_threshold_sub<<-0
-          
-          
-          #if(exists("Threshold_plot_sub")){ # First time, dont run this
+            
+            No_react_sub <<- FALSE
+            ################## BUTTON FOR MANUAL SUBJECT SCORE_ANALYSIS
             observeEvent(input$Threshold_slider_sub,{
-              #print("CUSTOM_sub")
+              if(No_react_sub){ # So that the slider does not react to itself
+                No_react_sub <<- FALSE
+                return()
+              }
+              
+
+              if(flag_subject_train && Score_analysis_subject_mode!="SM"){ # There was another training
+                print("Another training")
+                flag_subject_train <<- FALSE
+                return()
+              }
+              
               Threshold_plot_sub <<- input$Threshold_slider_sub
-              if(Threshold_plot_sub == round(GMM_threshold_sub, digits = 2) || Threshold_plot_sub == round(Tukey_threshold_subje, digits = 2)){ # The user pressed a strategy button
+              
+              if((Threshold_plot_sub==0 && GMM_threshold_sub==0 && Tukey_threshold_subje==0)){ #### First time
+                aux <- subject_scores
+                aux$subject_id <- NULL
+                No_react_sub <<- TRUE
                 
+                #print("bro...")
+                updateSliderInput(session, "Threshold_slider_sub", value = as.integer(min(aux), digits = 2),
+                                  min = as.integer(min(aux), digits = 2), max = round(as.double(max(aux)), digits = 2)-0.01)
+              }
+              
+              #print(Threshold_plot_sub)
+              #print(round(as.double(Tukey_threshold_subje), digits = 2))
+              if(Threshold_plot_sub == round(GMM_threshold_sub, digits = 2) || Threshold_plot_sub == round(as.double(Tukey_threshold_subje), digits = 2)){ # The user pressed a strategy button
+                ### Dont react
+                #print("Strategy")
               }else{
-                
-                
+                #print("Manual")
                 if(Threshold_plot_sub == 0){ # first time
                   updateSliderInput(session, "bins_subje", value = 30, min = 1, max = 50) # estava bins_trans
                   
@@ -2068,21 +1511,28 @@ server <- function(input, output, session) {
                                     min = 0, max = nrow(subject_scores))
                 }
                 
-                output$subject_hist_plot <- renderPlot({
+                #output$subject_hist_plot <- renderPlot({
+                  #print("Render Manual")
                   shinyjs::disable(id = "download_subjects")
                   aux <- subject_scores
                   aux$subject_id <- NULL
                   aux <- as.vector(t(aux))
                   score_array <- aux ## array with all scores in serie
-                  bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
+                  #bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
                   
                   ############################# OUTLIERS DOWNLOAD BUTTON
                   aux_subj <- subject_scores
                   aux_subj$outlier <- NULL
                   
                   aux_subj$outlier=factor(c(0,1))
-                  aux_subj[aux_subj$score<=Threshold_plot_sub,]$outlier <- 1 # Anomalies
-                  aux_subj[aux_subj$score>Threshold_plot_sub & aux_subj$score!=1,]$outlier <- 0 # Normal
+                  if(nrow(aux_subj[aux_subj$score<=Threshold_plot_sub,])==0){ # No anomalies
+                    aux_subj[aux_subj$score>Threshold_plot_sub & aux_subj$score!=1,]$outlier <- 0 # Only Normal
+                  }else{
+                    aux_subj[aux_subj$score<=Threshold_plot_sub,]$outlier <- 1 # Anomalies
+                    if(nrow(aux_subj[aux_subj$score>Threshold_plot_sub & aux_subj$score!=1,])!=0){ #Are there normals?
+                      aux_subj[aux_subj$score>Threshold_plot_sub & aux_subj$score!=1,]$outlier <- 0 # Normal
+                    }
+                  }
                   
                   shinyjs::enable(id = "download_subjects")
                   output$download_subjects <- downloadHandler(
@@ -2098,66 +1548,30 @@ server <- function(input, output, session) {
                   ###############################
                   
                   
+                  # updateSliderInput(session, "Threshold_slider_sub", value = as.numeric(Threshold_plot_sub),
+                  #                   min = as.integer(min(score_array), digits = 2), max = 0)
+                  
+                  Score_analysis_subject_mode <<- "SM"
+                  
                   updateSliderInput(session, "Threshold_slider_sub", value = as.numeric(Threshold_plot_sub),
-                                    min = as.integer(min(score_array), digits = 2), max = 0)
+                                    min = as.integer(min(score_array), digits = 2), max = round(as.double(max(score_array)), digits = 2)-0.01)
                   
-                  
-                  if(length(which(score_array < Threshold_plot_sub))==0){ # No Outliers Detected for this threshold
-                    
-                    no_outliers <<- TRUE ########## FLAG
-                    shinyjs::show(id = "sliders_subje")
-                    hist(score_array, 
-                         main="Histogram for Subject Outlier Scores using GMM's strategy", 
-                         xlab="Scores", 
-                         border="black", 
-                         col = "springgreen3",
-                         las=1, 
-                         breaks=bins) # breaks are the number of breakpoints which determine the bins
-                    legend("topright", c("Normal"), col=c("springgreen3"), lwd=10)
-                    aux <- paste("GMM threshold: ", round(Threshold_plot_sub, digits = 2))
-                    mtext(aux, side=3)
-                    abline(v=Threshold_plot_sub,col="red", lwd=2) # Computed Threshold
-                    rm(aux)
-                    
-                  }else{
-                    ##### FOR THE COLORS:
-                    red_array <- array("red3",dim = c(1,min(which(bins > Threshold_plot_sub))-2)) # -2 because of 0 and yellow
-                    green_array <- array("springgreen3",dim = c(1,length(bins) - min(which(bins > Threshold_plot_sub))))
-                    
-                    colours <- cbind(red_array,"orange",green_array)
-                    shinyjs::show(id = "sliders_subje")
-                    hist(score_array, 
-                         main="Histogram for Subject Outlier Scores using GMM's strategy", 
-                         xlab="Scores", 
-                         border="black", 
-                         col = colours,
-                         las=1, 
-                         breaks=bins) # breaks are the number of breakpoints which determine the bins
-                    
+                  output$subject_hist_plot <- renderPlot({
+                    bins <- seq(min(score_array), max(score_array), length.out = input$bins_subje + 1)
+                    histogram_plot(Score_analysis_mode = Score_analysis_subject_mode,score_array=score_array,Threshold = Threshold_plot_sub, bins=bins)
                     legend("topright", c("Normal", "Outlier"), col=c("springgreen3", "red3"), lwd=10)
-                    aux <- paste("GMM threshold: ", round(Threshold_plot_sub, digits = 2))
+                    aux <- paste("Threshold: ", round(Threshold_plot_sub, digits = 2))
                     mtext(aux, side=3)
                     abline(v=Threshold_plot_sub,col="red", lwd=2) # Computed Threshold
                     rm(aux)
-                    
-                  }
+                  })
                   
-                  # updateSliderInput(session, "bins_subje", value = 30, min = 1, max = 50)
-                  # 
-                  # updateSliderInput(session, "slider_color_subje", value = c(0, nrow(subject_scores)%/%10), # Initial value is 10%
-                  #                   min = 0, max = nrow(subject_scores))
-                  
-                  
-                })
+                #})
                 
                 # For the color matrix that shows the outliers:
                 # Reactive to Subject Slider
                 output$subject_mat_plot <- renderPlot({
-                  # if (input$fourth_button == 0 && n_subjects > 1){ ### IF THERE IS ONLY ONE SUBJECT, THERE IS NO LOGIC IN SHOWING
-                  #   
-                  # }else{
-                  # }
-                  
+
                   if(input$Threshold_slider_sub){}
                   
                   x <- as.matrix(subject_scores)
@@ -2173,7 +1587,6 @@ server <- function(input, output, session) {
                   x1$color=factor(x1$color<Threshold_plot_sub)
                   levels(x1$color)=c("Normal","Outlier")
                   
-                  
                   aux <- x1[x1$y>input$slider_color_subje[1] & x1$y<input$slider_color_subje[2],]
                   
                   ggplot(data = aux, aes(x=x-1.5, y=y, fill=color)) + ggtitle("Subject Outlierness by subject") +
@@ -2181,119 +1594,32 @@ server <- function(input, output, session) {
                     geom_tile() + scale_fill_manual(values=c("Outlier"="red", "Normal"="springgreen3"))
                   
                 })
+                aux <- subject_scores
+                aux$subject_id <- NULL
                 
-
-                
+                updateSliderInput(session, "Threshold_slider_sub", value = Threshold_plot_sub,
+                                  min = as.integer(min(aux), digits = 2), max = round(as.double(max(aux)), digits = 2)-0.01)
               }
             })
-          #}
           
-          
-          Threshold_plot_sub<<-0 # This only done once in the beginning after the oberve_event
-          
-          
-          
-          
-          # aux_trans <- transition_scores
-          # aux_trans$outlier <- NULL
-          # 
-          # ### TEM QUE ESTAR AQUI UM FOR OU ASSIM, PARA VER TODAS AS COLUNAS t_i E SUBSTITUIR POR TRUE OR FALSE
-          # 
-          # #aux_trans$outlier=factor(aux_trans$score<Tukey_threshold)
-          # 
-          # output$download_transition <- downloadHandler(
-          #   # This function returns a string which tells the client
-          #   # browser what name to use when saving the file.
-          #   filename = function() {
-          #     paste("transition_scores_output", ".csv", sep="")
-          #   },
-          #   content = function(file) {
-          #     write.csv(aux_trans, file, row.names = FALSE)
-          #   }
-          # )
-          
-
-          
-            # aux_subj <- subject_scores
-            # aux_subj$outlier <- NULL
-            # #names(aux_subj)=c(names(aux_subj),"outlier")
-            # 
-            # aux_subj$outlier=factor(aux_subj$score<Tukey_threshold_subje)
-            # 
-            # print("DOWNLOAD")
-            # 
-            # print(Tukey_threshold_subje)
-            # 
-            # print(head(aux_subj))
-            # 
-            # output$download_subjects <- downloadHandler(
-            #   # This function returns a string which tells the client
-            #   # browser what name to use when saving the file.
-            #   filename = function() {
-            #     paste("subject_scores_output", ".csv", sep="")
-            #   },
-            #   content = function(file) {
-            #     write.csv(aux_subj, file, row.names = FALSE)
-            #   }
-            # )
-
-          
-          myTabs<<-c(tabs1,tabs2,tabs3,lapply(4, fourth_panel), lapply(5, fifth_panel))
-          
-          shinyjs::hide(id = "loading-content", anim = TRUE, animType = "fade") 
-          shinyjs::hide(id = "third_button")
-          shinyjs::show(id = "fourth_div")
-          #shinyjs::show(id = "fourth_button")
+            
+            myTabs<<-c(tabs1,tabs2,tabs3,lapply(4, fourth_panel), lapply(5, fifth_panel))
+            
+            shinyjs::hide(id = "loading-content", anim = TRUE, animType = "fade") 
+            shinyjs::hide(id = "third_button")
+            shinyjs::show(id = "fourth_div")
+            #shinyjs::show(id = "fourth_button")
           
         }
 
-        
-        # observeEvent(input$train_again_button,{
-        #   shinyjs::toggle(id="third_div")
-        # })
-          #print(length(myTabs))
-
-          #nTabs = input$nTabs
-          #myTabs = lapply(paste('Tab', 1: 2), tabPanel)
-        
-        #tabsetpanel_id
-          #myTabs <<- c(list("tabsetpanel_id"),myTabs) # Add the id of the tabsetpanel
-        
             
           do.call(tabsetPanel, c(myTabs, id = "tabsetpanel_id"))
           
           
         })
-    # })
-  
-    # observe({
-    #   if (input$first_done > 0) {
-    #     session$sendCustomMessage('activeNavs', 'Second Tab')
-    #   }
-    # })
+
   
     ##############
-  
-  
-    ###################################### JAVA TEST
-    # output$java_test <- renderText({
-    #   java_object <- .jnew('Banana1/Banana', 10)
-    #   
-    #   print("LUL")
-    #   .jcall(java_object,returnSig = "S", "printme") # S for String (return type)
-    #   print(.jcall(java_object,returnSig = "S", "test_other_classfile"))
-    #   #"You have selected this"
-    # })
-      
-      
-      
-  
-     # output$java_test <- renderText({ 
-     #   .jcall("LearnFromFile","V","main",.jarray(c("-i", "artificial_data_v2_9000_1000_10.csv" ,"-p" ,"1", "-m", "1" ,"-s" ,"ll"  ,"-cDBN"  ,"-pm" ,"-o", "res_cDBN"), "java/lang/String")) 
-     #   #"You have selected this"
-     # })
-  
-    
     # Global Variables:
     data_input <- data.frame()
     data_output <- data.frame()
@@ -2424,7 +1750,7 @@ server <- function(input, output, session) {
               pageLength = 5,
               scrollX = TRUE ))
           
-          ################# ESTE BUTAO DA SEMPRE ? E SE A DATA DEU ERRO ?  MOSTRA SEMPRE?
+          #################
           output$downloadData <- downloadHandler(
             # This function returns a string which tells the client
             # browser what name to use when saving the file.

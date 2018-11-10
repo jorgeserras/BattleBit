@@ -800,17 +800,15 @@ server <- function(input, output, session) {
             write.csv(data_example, file, row.names = FALSE)
           }
         )
-
+        
           if (input$first_button == 0){
             return()
           }else{
-
-            
+            isolate(
             if (input$discretize_button == 0){
               ############# TEM DE VERIFICAR SE O FICHEIRO FOI INSERIDO
               # when reading semicolon separated files,
               # having a comma separator causes `read.csv` to error
-
               updateTabsetPanel(session, inputId="tabsetpanel_id", selected = 'processing_tab')
               tryCatch(
                 {
@@ -908,6 +906,7 @@ server <- function(input, output, session) {
                 }
               )
             }
+            )
           }
           
         

@@ -734,7 +734,7 @@ server <- function(input, output, session) {
               
               shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade")
               output$processing_description_string = renderText({
-                paste0("Each variable time series from the input dataset is discretized using a SAX algorithm with an alphabet size of ", input$alphabet_size, " symbols. Input data undergoes normalization prior to discretization. The diagram below displays the mean of the normalized time series of every variable. The resulting discretized dataset is present in the table below and can be downloaded.")
+                paste0("Each variable time series from the input dataset is discretized using a SAX algorithm with an alphabet size of ", input$alphabet_size, " symbols. Input data undergoes normalization prior to discretization. The diagram below displays the mean and standard deviation of the normalized time series of every variable. The resulting discretized dataset is present in the table below and can be downloaded.")
               })
               
               updateTabsetPanel(session, inputId="tabsetpanel_id", selected = 'processing_tab')

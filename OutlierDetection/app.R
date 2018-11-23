@@ -655,6 +655,7 @@ server <- function(input, output, session) {
                   #print(end_time - start_time)
                   
                   check_data <- data.frame(check_data)
+                  number_slices <- max(check_data$timestamp)
 
                   miss <- colSums(is.na(check_data)) ### Check for missing values
                   #print(typeof(miss))
@@ -699,6 +700,10 @@ server <- function(input, output, session) {
                     
                   }else{
                     shinyjs::show(id = "second_div")
+                    
+                    ### Update the value of the PAA slider
+                    updateSliderInput(session, "PAA_slider", value = number_slices, min = 2, max = number_slices) # estava bins_trans
+                    
                   }
 
   
@@ -742,12 +747,12 @@ server <- function(input, output, session) {
               
               shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade")
               output$processing_description_string = renderText({
-                paste0("Each variable time series from the input dataset is discretized using a SAX algorithm with an alphabet size of ", input$alphabet_size, " symbols. Input data undergoes normalization prior to discretization. The diagram below displays the mean and standard deviation of the normalized time series of every variable. The resulting discretized dataset is present in the table below and can be downloaded.")
+                paste0("Each variable time series from the input dataset is discretized using a SAX algorithm with an alphabet size of ", input$alphabet_size, " symbols. Input data undergoes normalization prior to discretization. The diagram below displays the mean and standard deviation of the normalized time series of every variable. The resulting discretized dataset is present in the table below and can be downloaded. ATTENTION: If the PAA reduction value is not set on max, time series are reduced and will impact every posterior procedures. The plot continues to display the full length data, however, the table shows the reduced data which can be downloaded. ")
               })
               
               updateTabsetPanel(session, inputId="tabsetpanel_id", selected = 'processing_tab')
               
-              list[discrete_data_set,subject_normalized, timestamp, n_variables ] <- discretize(data_input_OD, input$alphabet_size, 0) # , paa_size
+              list[discrete_data_set,subject_normalized, timestamp, n_variables ] <- discretize(data_input_OD, input$alphabet_size, input$PAA_slider) # , paa_size
               
               filepath <<- saveData(discrete_data_set, s3BucketName)
               

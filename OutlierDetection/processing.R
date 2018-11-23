@@ -33,9 +33,9 @@ library(gridExtra)
 
 discretize <- function(MTS_data, alphabet_size, paa_size){
   
-  
   # Original data is in Horizontal Format:
   #MTS_data <- read.csv(paste(base_filename, "_APPROPRIATE.csv", sep=""))
+  #print("SAX!")
   
   
   list[panel_data, n_variables] <- parseToPanel(MTS_data)
@@ -50,6 +50,7 @@ discretize <- function(MTS_data, alphabet_size, paa_size){
   
   final_data_discrete <- data.frame()
   subject_normalized <- list()
+  subject_normalized_paa <- list()
   
   current_subject <- 0
   
@@ -73,12 +74,22 @@ discretize <- function(MTS_data, alphabet_size, paa_size){
     #subject_normalized <- llply(subject, function(x){znorm(x, threshold = 0.01)})
     subject_normalized <- append(subject_normalized,list(llply(subject, function(x){znorm(x, threshold = 0)}))) # 0.01
 
+    #print(typeof(subject_normalized))
     
+    
+
     # Reduce the dimensionality using PAA
-    #subject <- llply(subject, function(x){paa(x, paa_size)})
+    #subject_normalized_paa <- subject_normalized
+    subject_normalized_paa <- append(subject_normalized_paa,list(llply(subject_normalized[current_subject][[1]], function(x){paa(x, paa_size)})))
+    #subject_normalized_paa <- llply(subject, function(x){paa(x, paa_size)}) ########################## PAA
+    #print("After PAA")
+    #subject_normalized <- subject_normalized_paa
+    #print(typeof(subject_normalized_paa))
+    
+    
     
     # Use the reduced data and convert it to symbolic using a certain alphabet size
-    subject <- llply(subject_normalized[current_subject][[1]], function(x){series_to_string(x, alphabet_size)}) 
+    subject <- llply(subject_normalized_paa[current_subject][[1]], function(x){series_to_string(x, alphabet_size)}) 
     
     # Turn each character into an element, columns represent position on string
     subject <- llply(subject, function(x){strsplit (x, "")}) 
@@ -86,22 +97,28 @@ discretize <- function(MTS_data, alphabet_size, paa_size){
     subject_dataframe = ldply(transpose(unlist(subject, recursive = FALSE )))
     
     
-    subject_regroup <- data.frame(cbind(id, timestamp, subject_dataframe))
+    #subject_regroup <- data.frame(cbind(id, timestamp, subject_dataframe))
+    #names(subject_regroup)[1] <- "subject_id"
+    
+    #print(nrow(subject_dataframe))
+    #subject_regroup <- data.frame(cbind(id[1:nrow(subject_dataframe)], timestamp[1:nrow(subject_dataframe)], subject_dataframe))
+    #subject_regroup <- data.frame(cbind(rep(id,nrow(subject_dataframe)), timestamp[1:nrow(subject_dataframe)], subject_dataframe))
+    
+    subject_regroup <- data.frame(cbind(id[1:nrow(subject_dataframe)], timestamp[1:nrow(subject_dataframe)], subject_dataframe))
     names(subject_regroup)[1] <- "subject_id"
+    names(subject_regroup)[2] <- "timestamp"
     
-    
+    #print(head(subject_regroup))
     # Correct format for Java Algorithm:
     subject_data_horizontal <- parseToHorizontal(subject_regroup)
     
     final_data_discrete <- rbind.data.frame(final_data_discrete, subject_data_horizontal)
-    
+    #print(head(final_data_discrete))
   }
-  
-  
   
   # Write CSV
   #write.csv(final_data_discrete, file = paste(base_filename, "_APPROPRIATE_DISCRETE.csv", sep=""), row.names = FALSE)
-  out <- list(final_data_discrete, subject_normalized, timestamp, n_variables)
+  out <<- list(final_data_discrete, subject_normalized, timestamp, n_variables)
   
   return(out) # subject_normalized, timestamp are needed for the plot
   

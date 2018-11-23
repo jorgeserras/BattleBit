@@ -642,9 +642,17 @@ server <- function(input, output, session) {
                   }
                   
                   #print("BEFORE")
+                  #start_time <- Sys.time()
                   check_data <- parseToPanel(data_input_OD) ####### Check if in Horizontal
+                  #end_time <- Sys.time()
+                  #print("ParseToPanel:")
+                  #print(end_time - start_time)
                   
-                  check_data <- parseToHorizontal(check_data) #### Check other issues
+                  #start_time <- Sys.time()
+                  #check_data <- parseToHorizontal(check_data) #### Check other issues
+                  #end_time <- Sys.time()
+                  #print("ParseToHorizontal:")
+                  #print(end_time - start_time)
                   
                   check_data <- data.frame(check_data)
 
@@ -1928,7 +1936,6 @@ server <- function(input, output, session) {
     # onStop(function() { # CODE DONE WHEN THE SESSION IS ENDED
     #   #if (file.exists(aux_dot_name)) file.remove(aux_dot_name)
     # 
-    #   print("telogo")
     #   # rm(aux_text)
     #   # rm(Tukey_threshold)
     #   # rm(Tukey_threshold_subje)
@@ -1938,7 +1945,7 @@ server <- function(input, output, session) {
     
     
     session$onSessionEnded(function() {
-      print("telogo")
+      print("Stopped application")
       #stopApp()
     })
     

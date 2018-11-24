@@ -654,7 +654,8 @@ server <- function(input, output, session) {
                   #print("ParseToHorizontal:")
                   #print(end_time - start_time)
                   
-                  check_data <- data.frame(check_data)
+                  #check_data <- data.frame(check_data)
+                  check_data <- data_input_OD
                   number_slices <- max(check_data$timestamp)
 
                   miss <- colSums(is.na(check_data)) ### Check for missing values

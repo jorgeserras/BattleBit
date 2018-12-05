@@ -155,6 +155,8 @@ source(here::here('statistical', 'score_analysis.R'))
 
 data_example <- read.csv("ECG_TRAINTEST_APPROPRIATE.csv")
 
+data_discrete_example <- read.csv("artificial_C_20_1000.csv")
+
 # The user interface (ui) object controls the layout and appearance of your app. 
 ui <- fluidPage(#theme = shinytheme("spacelab"),
               
@@ -444,13 +446,17 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                                )),
                                
                                div(id="first_div",
-                                 h3("Input Data", style = "display:inline; color: #75AADB;font-size:125%;"),
+                                 h3("Input Data", style = "display:inline; text-align:center; font-family: 'Lobster';color: #75AADB;font-size:125%;"),
                                  
-                                 div(id = "download_button_example",
-                                    tags$hr(),
+                                 div(id = "download_button_example", style="text-align: center;",
+                                    tags$br(),
                                     downloadButton("downloadData_example", label = "Continuous example data"),
+                                    tags$br(),
+                                    downloadButton("downloadData_discrete_example", label = "Discrete example data"),
                                     tags$hr()
                                  ),
+                                 
+                                 
                                  
                                  tags$head(
                                    tags$style(type="text/css", "
@@ -604,10 +610,21 @@ server <- function(input, output, session) {
           # This function returns a string which tells the client
           # browser what name to use when saving the file.
           filename = function() {
-            paste("non_discrete_example_data", ".csv", sep="")
+            paste("continuous_example_data", ".csv", sep="")
           },
           content = function(file) {
             write.csv(data_example, file, row.names = FALSE)
+          }
+        )
+        
+        output$downloadData_discrete_example <- downloadHandler(
+          # This function returns a string which tells the client
+          # browser what name to use when saving the file.
+          filename = function() {
+            paste("discrete_example_data", ".csv", sep="")
+          },
+          content = function(file) {
+            write.csv(data_discrete_example, file, row.names = FALSE)
           }
         )
         
@@ -653,14 +670,23 @@ server <- function(input, output, session) {
                   #end_time <- Sys.time()
                   #print("ParseToHorizontal:")
                   #print(end_time - start_time)
+                  #print(head(check_data[1]))
+                  check_data <- data.frame(check_data[1], stringsAsFactors=FALSE)
                   
-                  #check_data <- data.frame(check_data)
+                  #check_data <- ldply (check_data[1], data.frame)
+                  
+                  #print(head(check_data))
+                  #print("wtf")
+                  #print(check_data$timestamp)
+                  #print(typeof(check_data$timestamp))
+                  number_slices <<- max(check_data$timestamp)
+                  
+                  #print(number_slices)
                   check_data <- data_input_OD
-                  number_slices <- max(check_data$timestamp)
-
+                  
                   miss <- colSums(is.na(check_data)) ### Check for missing values
                   #print(typeof(miss))
-                  miss <<- data.frame(miss)
+                  miss <- data.frame(miss)
                   #print(miss)
                   if(length(miss[miss>0])!=0){
                     stop("The input file has missing values, please resolve before uploading.")

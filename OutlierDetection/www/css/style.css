@@ -32,7 +32,7 @@ a {
 }
 
 
-a#download_transition:hover, a#download_subjects:hover, a#downloadData_example:hover, a#download_data_discrete:hover, a#download_transition_scores:hover, a#download_subject_scores:hover, a#download_structure:hover{
+a#download_transition:hover, a#download_subjects:hover, a#downloadData_example:hover, a#downloadData_discrete_example:hover, a#download_data_discrete:hover, a#download_transition_scores:hover, a#download_subject_scores:hover, a#download_structure:hover{
   text-decoration: none !important;
   color: #00c1fd !important; 
 }

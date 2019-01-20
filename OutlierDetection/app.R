@@ -679,7 +679,8 @@ server <- function(input, output, session) {
                   #print("wtf")
                   #print(check_data$timestamp)
                   #print(typeof(check_data$timestamp))
-                  number_slices <<- max(check_data$timestamp)
+                  #number_slices <<- max(check_data$timestamp)
+                  number_slices <<- length(unique(check_data$timestamp))
                   
                   #print(number_slices)
                   check_data <- data_input_OD

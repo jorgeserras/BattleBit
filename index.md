@@ -132,7 +132,7 @@ In the figure below, an example of a sliding window is depicted concerning an un
 The next step is to apply score analysis to discern the final decision boundary between normal and anomalous scores. Scores below a specified value are classified as outliers.
 
 ### Score-Analysis
-
+as described in [<a href="#ref2">2</a>]
 Two score-analysis strategies are studied to elect an optimum threshold for outlier disclosure amidst scores. These strategies analyze the scores of each transition and subject and determine a boundary to discern the two classes, normality and abnormality.
 
 #### Tukey's strategy
@@ -157,7 +157,12 @@ where _P(y|Ci)_ is the likelihood of score _y_ belonging to class _Ci_, _P(Ci)_ 
 
 ## References
 
-
+<h3>References</h3>
+         <ol>
+            <li><a name="ref1"></a>Arbeitman, Michelle N., et al. "Gene expression during the life cycle of Drosophila melanogaster." Science 297.5590 (2002): 2270-2275.</li>
+            <li><a name="ref2"></a>Zhao, Wentao, Erchin Serpedin, and Edward R. Dougherty. "Inferring gene regulatory networks from time series data using the minimum description length principle." Bioinformatics 22.17 (2006): 2129-2135.</li>
+            <li><a name="ref3"></a>Dondelinger, Frank, Sophie Lèbre, and Dirk Husmeier. "Non-homogeneous dynamic Bayesian networks with Bayesian regularization for inferring gene regulatory networks with gradually time-varying structure." Machine learning 90.2 (2013): 191-230.</li>
+         </ol>
 
 
 ## Support and Contact

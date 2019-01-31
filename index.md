@@ -123,7 +123,7 @@ To acquire the outlierness of every MTS transition, a sliding window is employed
 
 #### EXAMPLE
 
-MENTION THE SMALL UNIVARIATE EXAMPLE OF THE IMAGE
+In the figure below, an example of a sliding window is depicted concerning an univariate TS. Since in the example, the DBN is of _2nd_-order, each window possess the observations of _3_ consecutive time slices. The first window to be captured explains attributes at time slice _L_. Each window is scored outputting the transition outlierness of its corresponding transition. For the multivariate case, the procedure is exactly the same with the exception that each slice is a composition of _n_ values instead of a single attribute as depicted below.
 
 <p align="center">
         <img src="assets/images/Sliding_Window.png">

@@ -129,9 +129,6 @@ In the figure below, an example of a sliding window is depicted concerning an un
         <img src="assets/images/Sliding_Window.png">
 </p>
 
-
-
-
 The next step is to apply score analysis to discern the final decision boundary between normal and anomalous scores. Scores below a specified value are classified as outliers.
 
 ### Score-Analysis
@@ -165,4 +162,4 @@ where _P(y|Ci)_ is the likelihood of score _y_ belonging to class _Ci_, _P(Ci)_ 
 
 ## Support and Contact
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Any doubts or bug reports? Feel free to report them in GitHub. Don't hesitate contacting through _jorgefuzetaserras@gmail.com_ our by visiting my social media links.

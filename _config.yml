@@ -1,6 +1,7 @@
 theme: jekyll-theme-minimal
 title: Dynamic Bayesian Network Outlier Detection
-description: A complete multivariate time series outlier detection system.
+description: A complete multivariate time series outlier detection system. </p>
+         <p>Released under the <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License 2.0</a></p>
 google_analytics: UA-127454922-1
 logo: logo.png
 show_downloads: "true"

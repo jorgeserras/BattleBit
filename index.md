@@ -95,11 +95,11 @@ In the web application, the modeling and scoring phases are performed at the sam
 
 #### Modeling
 
-Define transition/window antes
-
 Temporal dependencies within and between discrete variables can be modeled using dynamic Bayesian networks (DBN) which extend traditional Bayesian networks to temporal processes. These are graphical statistical methods capable of encoding conditional relationships of complex MTS structures. A modeling technique known as **[tree-augmented DBN (tDBN)](http://josemonteiro.github.io/tDBN/)** is used to provide a network possessing optimum inter/intra-slice connectivities for each transition network, verified to outperform existing literature. An attribute node at a certain time-slice can only possess at most one parent at that same slice. Furthermore, in each node, the maximum number of parents from preceding time slices is bounded by a parameter _p_. Both stationary and nonstationary DBNs are studied. The model provides a normality standard for anomaly detection.
 
 The user can specify the value of both parameters _L_ and _p_, representing respectively the order (lag) and the number of preceding parents of each node wllowed. The user can furthermore choose between a stationary or non-stationary model. A stationary DBN uses a common transition network for every transition of the dataset, being thus ideal for series with statistical properties invariant of time. On the other hand, non-stationary DBNs acquire a transition network for every transition, adapting to statistical properties which change through time.
+
+Given a _m_-_th_-oder DBN, a window is defined as a subset of observations concerning a time transition _t-m_ -> _t_. Windows have a size equal to _n(m+1)_, where _n_ and _m_ are respectively the number of attributes and order of the network. A MTS composed by multiple transitions is thus capable of outputting multiple windows, possessing the observations concerning the genaration of each slice's attributes given the current and preceeding observations. Such relations are encoded in the DBN modeled.
 
 #### Scoring
 

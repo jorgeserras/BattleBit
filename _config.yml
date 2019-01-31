@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 title: Dynamic Bayesian Network Outlier Detection
 description: A complete multivariate time series outlier detection system. </p>
-         <p>Released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0 License</a></p>
+         <p>Released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0 License</a></p>.
 google_analytics: UA-127454922-1
 logo: logo.png
 show_downloads: "true"

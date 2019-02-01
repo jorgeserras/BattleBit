@@ -70,7 +70,7 @@ Example of a continuous imput file:
 
 Real-world datasets have a tendency to be continuous and of high dimension. Un-discretized variables foment an heavy and over-fitted model which ends up behaving poorly. The same can be said to over-sampled data. Being the trained model a DBN, pre-processing is required.
 
-A representation known as Symbolic Aggregate approXimation (SAX) is enforced on each input time series (TS) prior to the modeling phase if necessary. The procedure is applied to each univariate TS separately. Each series is then combined to form a discrete MTS dataset, each with an alphabet size chosen in the application. The SAX procedure is seen as 3 steps:
+A representation known as Symbolic Aggregate approXimation (SAX) [<a href="#ref1">1</a>] is enforced on each input time series (TS) prior to the modeling phase if necessary. The procedure is applied to each univariate TS separately. Each series is then combined to form a discrete MTS dataset, each with an alphabet size chosen in the application. The SAX procedure is seen as 3 steps:
 
 1. Normalization: Every TS is normalized to present zero mean and a standard deviation of one, such is achieved by employing Z-normalization. The mean of a TS is subtracted from every data point. The result is then divided by the TS' standard deviation.
 
@@ -82,7 +82,7 @@ Note that PAA can be overlooked, being normalized TS directly discretized withou
 
 #### EXAMPLE
 
-Consider a TS comprised by 8 points. After normalizing the series, a PAA transformation of length 3 is employed, creating 3 windows of equal length. 3-point PAA transform can be seen in the image below. The latter is converted to the string "acb" considering an alphabet size of 3, being each symbol region visable in purple in the image. The procedure employs the R package JMotif REF THIS.
+Consider a TS comprised by 8 points. After normalizing the series, a PAA transformation of length 3 is employed, creating 3 windows of equal length. 3-point PAA transform can be seen in the image below. The latter is converted to the string "acb" considering an alphabet size of 3, being each symbol region visable in purple in the image. The procedure employs the R package **[JMotif](https://github.com/jMotif/jmotif-R)**.
 
 ![SAX_example](assets/images/SAX_example.png)
 
@@ -95,7 +95,7 @@ In the web application, the modeling and scoring phases are performed at the sam
 
 #### Modeling
 
-Temporal dependencies within and between discrete variables can be modeled using dynamic Bayesian networks (DBN) which extend traditional Bayesian networks to temporal processes. These are graphical statistical methods capable of encoding conditional relationships of complex MTS structures. A modeling technique known as **[tree-augmented DBN (tDBN)](http://josemonteiro.github.io/tDBN/)** is used to provide a network possessing optimum inter/intra-slice connectivities for each transition network, verified to outperform existing literature. An attribute node at a certain time-slice can only possess at most one parent at that same slice. Furthermore, in each node, the maximum number of parents from preceding time slices is bounded by a parameter _p_. Both stationary and nonstationary DBNs are studied. The model provides a normality standard for anomaly detection.
+Temporal dependencies within and between discrete variables can be modeled using dynamic Bayesian networks (DBN) which extend traditional Bayesian networks to temporal processes. These are graphical statistical methods capable of encoding conditional relationships of complex MTS structures. A modeling technique known as **[tree-augmented DBN (tDBN)](http://josemonteiro.github.io/tDBN/)** [<a href="#ref2">2</a>] is used to provide a network possessing optimum inter/intra-slice connectivities for each transition network, verified to outperform existing literature. An attribute node at a certain time-slice can only possess at most one parent at that same slice. Furthermore, in each node, the maximum number of parents from preceding time slices is bounded by a parameter _p_. Both stationary and nonstationary DBNs are studied. The model provides a normality standard for anomaly detection.
 
 The user can specify the value of both parameters _L_ and _p_, representing respectively the order (lag) and the number of preceding parents of each node wllowed. The user can furthermore choose between a stationary or non-stationary model. A stationary DBN uses a common transition network for every transition of the dataset, being thus ideal for series with statistical properties invariant of time. On the other hand, non-stationary DBNs acquire a transition network for every transition, adapting to statistical properties which change through time.
 
@@ -132,12 +132,12 @@ In the figure below, an example of a sliding window is depicted concerning an un
 The next step is to apply score analysis to discern the final decision boundary between normal and anomalous scores. Scores below a specified value are classified as outliers.
 
 ### Score-Analysis
-as described in [<a href="#ref2">2</a>]
+
 Two score-analysis strategies are studied to elect an optimum threshold for outlier disclosure amidst scores. These strategies analyze the scores of each transition and subject and determine a boundary to discern the two classes, normality and abnormality.
 
 #### Tukey's strategy
 
-One can define abnormal scores as values that are too far away from the norm, presuming the existence of a cluster comprising normality. The current technique has inspiration in John Tukey's method, which determines the score's interquartile range (IQR) as _IQR = Q3 - Q1_, where _Q1_ and _Q3_ are the first and third quartiles respectively. The IQR measures statistical dispersion, depicting that 50% of the scores are within more or less _0.5IQR_ from the median. By ignoring the scores' mean and standard deviation, the impact of extreme scores does not influence the procedure. The IQR is hence a measure of variability robust to the presence of outliers.
+One can define abnormal scores as values that are too far away from the norm, presuming the existence of a cluster comprising normality. The current technique has inspiration in John Tukey's method [<a href="#ref3">3</a>], which determines the score's interquartile range (IQR) as _IQR = Q3 - Q1_, where _Q1_ and _Q3_ are the first and third quartiles respectively. The IQR measures statistical dispersion, depicting that 50% of the scores are within more or less _0.5IQR_ from the median. By ignoring the scores' mean and standard deviation, the impact of extreme scores does not influence the procedure. The IQR is hence a measure of variability robust to the presence of outliers.
 
 Tukey uses the notion of fences, frontiers which separate outliers from normal data. The proposed approach typically generates negatively skew score distributions. Hence, a lower fence computed as _Q1 – (1.5IQR)_ is used. Transition and subject scores are classified as abnormal if their value subsists below their respective lower fence, since these are low likelihood entities. Thus, scores holding inequality
 
@@ -149,7 +149,7 @@ are considered abnormal, being _Q1 - (1.5IQR)_ the threshold. Tukey's procedure 
 
 #### Gaussian mixture model strategy
 
-To handle disjoint score distributions, a method based on a Gaussian Mixture Model (GMM) is employed. Commonly used in classification and clustering problems, GMMs are probabilistic models that assume data is generated from a finite mixture of Gaussian distributions with unknown parameters. Most real-world phenomena has Gaussian like distributions. In the present system, score distributions are modeled as a mixture of two Gaussian curves. Labeling each score becomes a classification problem among two classes _C1_ and _C2_, representing normality and abnormality respectively. Such is interpreted as uncovering the value of _P(C1,C2|y)_ for each score value _y_, which can be obtained by employing Bayes Rule
+To handle disjoint score distributions, a method based on a Gaussian Mixture Model (GMM) is employed adapted by [<a href="#ref4">4</a>]. Commonly used in classification and clustering problems, GMMs are probabilistic models that assume data is generated from a finite mixture of Gaussian distributions with unknown parameters. Most real-world phenomena has Gaussian like distributions. In the present system, score distributions are modeled as a mixture of two Gaussian curves. Labeling each score becomes a classification problem among two classes _C1_ and _C2_, representing normality and abnormality respectively. Such is interpreted as uncovering the value of _P(C1,C2|y)_ for each score value _y_, which can be obtained by employing Bayes Rule
 <p align="center">
         <img src="assets/images/Bayes_rule.png">
 </p>

@@ -156,14 +156,15 @@ To handle disjoint score distributions, a method based on a Gaussian Mixture Mod
 where _P(y|Ci)_ is the likelihood of score _y_ belonging to class _Ci_, _P(Ci)_ the priors for each class and _P(y)_ the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty. A score _y_ is classified as anomalous if _P(y|C1)P(C1)>P(y|C2)P(C2)_. Such is known as the Bayes Classification Rule (BCR), which provides the desired boundary. To discover the parameters of each Gaussian distribution, the current system adapts an available R package mclust REF THIS. The GMM strategy can handle discontinued score distributions, however, it assumes the existence of an outlier cluster. Thus, Tukey's and GMM strategies expect distinct scenarios.
 
 ## References
-
-
-         <ol>
-            <li><a name="ref1"></a>Arbeitman, Michelle N., et al. "Gene expression during the life cycle of Drosophila melanogaster." Science 297.5590 (2002): 2270-2275.</li>
-            <li><a name="ref2"></a>Zhao, Wentao, Erchin Serpedin, and Edward R. Dougherty. "Inferring gene regulatory networks from time series data using the minimum description length principle." Bioinformatics 22.17 (2006): 2129-2135.</li>
-            <li><a name="ref3"></a>Dondelinger, Frank, Sophie Lèbre, and Dirk Husmeier. "Non-homogeneous dynamic Bayesian networks with Bayesian regularization for inferring gene regulatory networks with gradually time-varying structure." Machine learning 90.2 (2013): 191-230.</li>
-         </ol>
-
+<a name="ref1"></a>
+1.  A paragraph
+    with two lines.
+<a name="ref2"></a>
+2.  A paragraph
+    with two lines.
+<a name="ref3"></a>
+3.  A paragraph
+    with two lines.
 
 ## Support and Contact
 

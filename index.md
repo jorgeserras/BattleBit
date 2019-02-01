@@ -159,9 +159,11 @@ where _P(y|Ci)_ is the likelihood of score _y_ belonging to class _Ci_, _P(Ci)_ 
 <a name="ref1"></a>
 1.  A paragraph
     with two lines.
+<br>
 <a name="ref2"></a>
 2.  A paragraph
     with two lines.
+<br>    
 <a name="ref3"></a>
 3.  A paragraph
     with two lines.

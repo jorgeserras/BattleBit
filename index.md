@@ -157,7 +157,7 @@ where _P(y|Ci)_ is the likelihood of score _y_ belonging to class _Ci_, _P(Ci)_ 
 
 ## References
 
-<h3>References</h3>
+
          <ol>
             <li><a name="ref1"></a>Arbeitman, Michelle N., et al. "Gene expression during the life cycle of Drosophila melanogaster." Science 297.5590 (2002): 2270-2275.</li>
             <li><a name="ref2"></a>Zhao, Wentao, Erchin Serpedin, and Edward R. Dougherty. "Inferring gene regulatory networks from time series data using the minimum description length principle." Bioinformatics 22.17 (2006): 2129-2135.</li>

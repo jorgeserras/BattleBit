@@ -158,14 +158,11 @@ where _P(y|Ci)_ is the likelihood of score _y_ belonging to class _Ci_, _P(Ci)_ 
 ## References
 <a name="ref1"></a>
 1.  J. Lin, E. J. Keogh, S. Lonardi, and B. Y. Chiu. "A symbolic representation of time series, with implications for streaming algorithms". In DMKD, pages 2–11. ACM, 2003.
-<br>
-<a name="ref2"></a>
+<br><a name="ref2"></a>
 2.  J. L. Monteiro, S. Vinga, A. M. Carvalho, "Polynomial-time algorithm for learning optimal tree-augmented dynamic Bayesian networks". In:  UAI, 2015,  pp. 622–631.
-<br>    
-<a name="ref3"></a>
+<br><a name="ref3"></a>
 3.  J. W. Tukey. "Exploratory data analysis", volume 2. Reading, Mass., 1977.
-<br>    
-<a name="ref4"></a>
+<br><a name="ref4"></a>
 4.  C. Fraley, A. Raftery, L. Scrucca, T. B. Murphy, M. Fop, and M. L. Scrucca. Package ‘mclust’. 2017.
 
 ## Support and Contact

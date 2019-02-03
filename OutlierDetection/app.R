@@ -191,6 +191,7 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                       @import url('//fonts.googleapis.com/css?family=Lobster|Cabin:400,700');
                     "))
                 ),
+                tags$head(tags$link(rel="shortcut icon", href="/favicon.ico")),
                 
                 use_bs_tooltip(),
                 use_bs_popover(),

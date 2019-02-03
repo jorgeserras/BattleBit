@@ -289,11 +289,11 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                                                      ###########
                                                      
                                                      # Horizontal line ----
-                                                     tags$hr(),
+                                                     #tags$hr(),
                                                      
-                                                     p("Check out the online version",
-                                                       a("here", 
-                                                         href = "https://jorgeserras.shinyapps.io/outlierdetection/")),
+                                                     #p("Check out the online version",
+                                                     #   a("here", 
+                                                     #     href = "https://jorgeserras.shinyapps.io/outlierdetection/")),
                                                      
                                                      actionButton("format_button", "Format")
                                                      
@@ -301,8 +301,8 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                                         
                                         # Main panel for displaying outputs ----
                                         mainPanel(
-                                          column(12, align="center",
-                                                 img(src = "Word_Art.png", height = 250, width = 200)
+                                          column(12, align="center"#,
+                                                 #img(src = "Word_Art.png", height = 250, width = 200)
                                           ),
                                           
                                           # Output: Data file ----
@@ -318,7 +318,7 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                                                                                             font-style: bold;
                                                                                             }")),
                                           #hidden(
-                                            div(id = "download_button",
+                                            div(id = "download_button", style="text-align: center;",
                                                 #h2("The Download Button will be functional once formatting is complete with no errors."),
                                                 textOutput("button_text"),
                                                 disabled(
@@ -341,94 +341,96 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                              
                              ), 
                   
-                  tabPanel("Score Analysis",  icon = icon("bar-chart-o"),
-                           titlePanel("Outlierness Histogram - Tukey's Method"),
-                           
-                           
-                           # Sidebar layout with input and output definitions ----
-                           sidebarLayout(
-                             
-                             # Sidebar panel for inputs ----
-                             sidebarPanel(position = "right",
-                                          
-                                          # Input: Select a file ----
-                                          fileInput("file1", "Choose CSV File",
-                                                    multiple = FALSE,
-                                                    accept = c("text/csv",
-                                                               "text/comma-separated-values,text/plain",
-                                                               ".csv")),
-                                          
-                                          # Horizontal line ----
-                                          tags$hr(),
-                                          
-                                          # Input: Checkbox if file has header ----
-                                          checkboxInput("header", "Header", TRUE),
-                                          
-                                          # Input: Select separator ----
-                                          radioButtons("sep", "Separator",
-                                                       choices = c(Comma = ",",
-                                                                   Semicolon = ";",
-                                                                   Tab = "\t"),
-                                                       selected = ","),
-                                          
-                                          # Input: Select quotes ----
-                                          radioButtons("quote", "Quote",
-                                                       choices = c(None = "",
-                                                                   "Double Quote" = '"',
-                                                                   "Single Quote" = "'"),
-                                                       selected = '"'),
-                                          
-                                          # Horizontal line ----
-                                          tags$hr(),
-                                          
-                                          # Input: Select number of rows to display ----
-                                          radioButtons("disp", "Display",
-                                                       choices = c(Head = "head",
-                                                                   All = "all"),
-                                                       selected = "head"),
-                                          
-                                          
-                                          p("Check out the online version",
-                                            a("here", 
-                                              href = "https://jorgeserras.shinyapps.io/outlierdetection/")),
-                                          
-                                          
-                                          # Input: Slider for the number of bins ----
-                                          sliderInput(inputId = "bins",
-                                                      label = "Number of bins:",
-                                                      min = 1,
-                                                      max = 50,
-                                                      value = 30),
-                                          
-                                          sliderInput("slider_color", label = h3("Subject Range"), min = 0, 
-                                                      max = 100, value = c(40, 60)),
-                                          
-                                          p("Higher the number of bins, higher the resolution of the histogram."),
-                                          p("This does not affect the outcome of the outlier detection.")
-                                          
-                             ),
-                             
-                             # Main panel for displaying outputs ----
-                             mainPanel(
-                               column(12, align="center",
-                                      img(src = "Word_Art.png", height = 250, width = 200)
-                               ),
-                               
-                               # Output: Data file ----
-                               tableOutput("contents"),
-                               
-                               # Output: Histogram ----
-                               plotOutput(outputId = "distPlot"),
-                               
-                               plotOutput(outputId = "matplot"),
-                               
-                               textOutput("java_test")
-                               
-                             )
-                           )),
+                  ###################### SCORE ANALYSIS TAB COMMENTED FOR NOW !!!
+                  
+                  # tabPanel("Score Analysis",  icon = icon("bar-chart-o"),
+                  #          titlePanel("Outlierness Histogram - Tukey's Method"),
+                  #          
+                  #          
+                  #          # Sidebar layout with input and output definitions ----
+                  #          sidebarLayout(
+                  #            
+                  #            # Sidebar panel for inputs ----
+                  #            sidebarPanel(position = "right",
+                  #                         
+                  #                         # Input: Select a file ----
+                  #                         fileInput("file1", "Choose CSV File",
+                  #                                   multiple = FALSE,
+                  #                                   accept = c("text/csv",
+                  #                                              "text/comma-separated-values,text/plain",
+                  #                                              ".csv")),
+                  #                         
+                  #                         # Horizontal line ----
+                  #                         tags$hr(),
+                  #                         
+                  #                         # Input: Checkbox if file has header ----
+                  #                         checkboxInput("header", "Header", TRUE),
+                  #                         
+                  #                         # Input: Select separator ----
+                  #                         radioButtons("sep", "Separator",
+                  #                                      choices = c(Comma = ",",
+                  #                                                  Semicolon = ";",
+                  #                                                  Tab = "\t"),
+                  #                                      selected = ","),
+                  #                         
+                  #                         # Input: Select quotes ----
+                  #                         radioButtons("quote", "Quote",
+                  #                                      choices = c(None = "",
+                  #                                                  "Double Quote" = '"',
+                  #                                                  "Single Quote" = "'"),
+                  #                                      selected = '"'),
+                  #                         
+                  #                         # Horizontal line ----
+                  #                         tags$hr(),
+                  #                         
+                  #                         # Input: Select number of rows to display ----
+                  #                         radioButtons("disp", "Display",
+                  #                                      choices = c(Head = "head",
+                  #                                                  All = "all"),
+                  #                                      selected = "head"),
+                  #                         
+                  #                         
+                  #                         p("Check out the online version",
+                  #                           a("here", 
+                  #                             href = "https://jorgeserras.shinyapps.io/outlierdetection/")),
+                  #                         
+                  #                         
+                  #                         # Input: Slider for the number of bins ----
+                  #                         sliderInput(inputId = "bins",
+                  #                                     label = "Number of bins:",
+                  #                                     min = 1,
+                  #                                     max = 50,
+                  #                                     value = 30),
+                  #                         
+                  #                         sliderInput("slider_color", label = h3("Subject Range"), min = 0, 
+                  #                                     max = 100, value = c(40, 60)),
+                  #                         
+                  #                         p("Higher the number of bins, higher the resolution of the histogram."),
+                  #                         p("This does not affect the outcome of the outlier detection.")
+                  #                         
+                  #            ),
+                  #            
+                  #            # Main panel for displaying outputs ----
+                  #            mainPanel(
+                  #              column(12, align="center",
+                  #                     img(src = "Word_Art.png", height = 250, width = 200)
+                  #              ),
+                  #              
+                  #              # Output: Data file ----
+                  #              tableOutput("contents"),
+                  #              
+                  #              # Output: Histogram ----
+                  #              plotOutput(outputId = "distPlot"),
+                  #              
+                  #              plotOutput(outputId = "matplot"),
+                  #              
+                  #              textOutput("java_test")
+                  #              
+                  #            )
+                  #          )),
                   
                   
-                  tabPanel("Outlier Detection",  icon = icon("gears"),
+                  tabPanel("Outlier Detection",  icon = icon("bar-chart-o"),
                            titlePanel("Outlierness Detection"),
                            
                           
@@ -780,7 +782,13 @@ server <- function(input, output, session) {
               
               updateTabsetPanel(session, inputId="tabsetpanel_id", selected = 'processing_tab')
               
-              list[discrete_data_set,subject_normalized, timestamp, n_variables ] <- discretize(data_input_OD, input$alphabet_size, input$PAA_slider) # , paa_size
+              #list[discrete_data_set,subject_normalized, timestamp, n_variables ]
+              aux_list <- discretize(data_input_OD, input$alphabet_size, input$PAA_slider) # , paa_size
+              
+              discrete_data_set <- aux_list[[1]]
+              subject_normalized <- aux_list[[2]]
+              timestamp <- aux_list[[3]]
+              n_variables <- aux_list[[4]]
               
               filepath <<- saveData(discrete_data_set, s3BucketName)
               
@@ -968,13 +976,13 @@ server <- function(input, output, session) {
             
             shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade") 
             
-            print(Score_analysis_transition_mode)
+            #print(Score_analysis_transition_mode)
             if(Score_analysis_transition_mode != "D"){ # Not the first model trained, recompute the selected modes
               if(Score_analysis_transition_mode=="TT") click("Tukey_button") # Simulate the clicking
               if(Score_analysis_transition_mode=="TG") click("GMM_button") # Simulate the clicking
               flag_transition_train <<- TRUE
             }
-            print(Score_analysis_subject_mode)
+            #print(Score_analysis_subject_mode)
             if(Score_analysis_subject_mode != "D"){ # Not the first model trained, recompute the selected modes
               if(Score_analysis_subject_mode=="ST") click("Tukey_button_sub") # Simulate the clicking
               if(Score_analysis_subject_mode=="SG") click("GMM_button_sub") # Simulate the clicking

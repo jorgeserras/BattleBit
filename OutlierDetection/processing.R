@@ -37,8 +37,12 @@ discretize <- function(MTS_data, alphabet_size, paa_size){
   #MTS_data <- read.csv(paste(base_filename, "_APPROPRIATE.csv", sep=""))
   #print("SAX!")
   
+  #list[panel_data, n_variables]
+  aux_list <- parseToPanel(MTS_data)
   
-  list[panel_data, n_variables] <- parseToPanel(MTS_data)
+  panel_data <- aux_list[[1]]
+  n_variables <- aux_list[[2]]
+  
   
   c(panel_data, n_variables)
   

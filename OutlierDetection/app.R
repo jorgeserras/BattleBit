@@ -975,7 +975,10 @@ server <- function(input, output, session) {
             ## Subject Manual: SM
             
             
-            shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade") 
+            shinyjs::show(id = "loading-content", anim = TRUE, animType = "fade")
+            
+            flag_transition_train <<- FALSE
+            flag_subject_train <<- FALSE
             
             #print(Score_analysis_transition_mode)
             if(Score_analysis_transition_mode != "D"){ # Not the first model trained, recompute the selected modes

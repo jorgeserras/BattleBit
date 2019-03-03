@@ -220,7 +220,7 @@ ui <- fluidPage(#theme = shinytheme("spacelab"),
                   )
                 ),
                 
-                navbarPage(title="DBNOD", #shiny::HTML("<a style=color:grey;  href=\"\"><font face=\"helvetica\">DBNOD</font></a>")
+                navbarPage(title="METEOR", #shiny::HTML("<a style=color:grey;  href=\"\"><font face=\"helvetica\">METEOR</font></a>")
                            # YOU CAN ADD AN IMAGE/GIF TO THE NAVBAR
                   #title=div(img(src="analytics.gif", width="50"), "My Title in the Navbar"),
                   

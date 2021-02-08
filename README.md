@@ -4,7 +4,7 @@ MultivariatE Time sEries OutlieR (METEOR) is a R and Java implementation of a co
 
 ## NOTICE
 
-To employ METEOR without Shiny graphical interface, please check the given repository: https://github.com/jorgeserras/MTS_OutlierDetection_R
+To employ METEOR without Shiny graphical interface (https://meteor.jorgeserras.com/), please check the given repository: https://github.com/jorgeserras/MTS_OutlierDetection_R
 
 Visit the Github page for more information: https://jorgeserras.github.io/MTS_OutlierDetection/
 

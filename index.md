@@ -158,6 +158,7 @@ To handle disjoint score distributions, a method based on a Gaussian Mixture Mod
 where _P(y|Ci)_ is the likelihood of score _y_ belonging to class _Ci_, _P(Ci)_ the priors for each class and _P(y)_ the evidence. The threshold is the boundary that better separates both curves, which describes the point of maximum uncertainty. A score _y_ is classified as anomalous if _P(y|C1)P(C1)>P(y|C2)P(C2)_. Such is known as the Bayes Classification Rule (BCR), which provides the desired boundary. To discover the parameters of each Gaussian distribution, the current system adapts an available R package mclust REF THIS. The GMM strategy can handle discontinued score distributions, however, it assumes the existence of an outlier cluster. Thus, Tukey's and GMM strategies expect distinct scenarios.
 
 ## References
+
 <a name="ref1"></a>
 1.  J. Lin, E. J. Keogh, S. Lonardi, and B. Y. Chiu. "A symbolic representation of time series, with implications for streaming algorithms". In DMKD, pages 2–11. ACM, 2003.
 <br><a name="ref2"></a>

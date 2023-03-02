@@ -8,6 +8,6 @@ The web application can be accessed here: https://meteor.jorgeserras.com/ (old l
 
 To employ METEOR without Shiny graphical interface, please check the given repository: https://github.com/jorgeserras/MTS_OutlierDetection_R
 
-Visit the Github page for more information: https://jorgeserras.github.io/MTS_OutlierDetection/
+Visit the Github page for more information: https://github.com/jorgeserras/MTS_OutlierDetection/blob/gh-pages/index.md
 
 Licensed under the **[GPL-3.0 License](https://www.gnu.org/licenses/gpl-3.0.html)**.

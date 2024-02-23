@@ -1,9 +1,0 @@
-COLORS style.css:
-
-
-#ef6249
-
-
-#0099ff
-
-#00c1fd

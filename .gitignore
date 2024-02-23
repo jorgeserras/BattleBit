@@ -1,9 +1,0 @@
-*.pper
-OutlierDetection/.Rproj.user
-OutlierDetection/.Rhistory
-OutlierDetection/.RData
-OutlierDetection/rsconnect
-OutlierDetection/dbn_structure_dot
-OutlierDetection/dbn_structure_output
-OutlierDetection/scores_transition_output.csv
-OutlierDetection/subject_scores_output.csv
